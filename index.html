@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <title>パスワード生成</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="passwordGenerator.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <h1>パスワード生成</h1>
+
+    <section class="result" aria-label="生成結果">
+      <div class="result-row">
+        <label class="visually-hidden" for="password">生成されたパスワード</label>
+        <input id="password" class="password" type="text" readonly autocomplete="off"
+          autocapitalize="off" spellcheck="false">
+        <button id="copy-button" type="button">コピー</button>
+      </div>
+      <div class="result-actions">
+        <button id="visibility-button" type="button" aria-pressed="false">伏せ字にする</button>
+      </div>
+      <p id="copy-status" class="status" aria-live="polite"></p>
+
+      <div class="strength">
+        <span class="strength-title">強度(概算):</span>
+        <meter id="strength-meter" min="0" max="4" low="2" high="3" optimum="4" value="0"></meter>
+        <span id="strength-label"></span>
+        <span id="strength-bits"></span>
+      </div>
+      <p class="note">文字集合に基づく強度の概算です(厳密なエントロピーではありません)。</p>
+
+      <button id="regenerate-button" class="primary" type="button">再生成</button>
+    </section>
+
+    <section class="settings" aria-label="生成の条件">
+      <p id="error-message" class="error" role="alert"></p>
+
+      <div class="length-row">
+        <label for="length-input">長さ</label>
+        <input id="length-range" type="range" min="8" max="128" step="1" value="24"
+          aria-label="長さ(スライダー)">
+        <input id="length-input" class="length-input" type="text" inputmode="numeric"
+          autocomplete="off" value="24">
+      </div>
+
+      <fieldset class="types">
+        <legend>文字種</legend>
+        <label class="check"><input id="has-uppercase" type="checkbox" checked> 英大文字</label>
+        <label class="check"><input id="has-lowercase" type="checkbox" checked> 英小文字</label>
+        <label class="check"><input id="has-digits" type="checkbox" checked> 数字</label>
+        <label class="check"><input id="has-symbols" type="checkbox" checked> 記号</label>
+      </fieldset>
+
+      <label class="check">
+        <input id="is-ambiguous-excluded" type="checkbox"> 紛らわしい文字を除外 (0/O, 1/l/I)
+      </label>
+
+      <div class="symbols-row">
+        <label for="symbols">使う記号(ASCIIの記号32種・編集可)</label>
+        <input id="symbols" class="symbols" type="text" autocomplete="off" autocapitalize="off"
+          spellcheck="false">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
