@@ -31,6 +31,16 @@ const NODE_GLOBALS = Object.freeze({
   Buffer: "readonly",
 });
 
+const E2E_BROWSER_GLOBALS = Object.freeze({
+  window: "readonly",
+  document: "readonly",
+  navigator: "readonly",
+  localStorage: "readonly",
+  sessionStorage: "readonly",
+  location: "readonly",
+  performance: "readonly",
+});
+
 // 危険なAPIと、暗号論的でない乱数の使用を禁止する
 const SECURITY_RULES = Object.freeze({
   "no-eval": "error",
@@ -84,6 +94,11 @@ module.exports = [
     languageOptions: { ecmaVersion: 2022, sourceType: "commonjs", globals: NODE_GLOBALS },
     linterOptions: { reportUnusedDisableDirectives: "error" },
     rules: { ...SECURITY_RULES, ...STYLE_RULES },
+  },
+  {
+    // page.evaluate などに渡す関数はブラウザで実行されるため、ブラウザの名前も使える
+    files: ["tests/e2e/**/*.js"],
+    languageOptions: { globals: { ...NODE_GLOBALS, ...E2E_BROWSER_GLOBALS } },
   },
   {
     files: ["passwordGenerator.js", "app.js"],
