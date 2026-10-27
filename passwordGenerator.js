@@ -13,6 +13,7 @@
   const UINT32_RANGE = 2 ** 32;
   // NOTE: 1回の棄却確率は 1/2 未満なので、この回数に達するのは乱数源の故障時だけ
   const MAX_REJECTIONS = 1000;
+  const RANDOM_POOL_SIZE = 256;
 
   const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
@@ -194,7 +195,27 @@
     if (!cryptoObject || typeof cryptoObject.getRandomValues !== "function") {
       throw new PasswordGeneratorError("RANDOM_UNAVAILABLE");
     }
-    return (array) => cryptoObject.getRandomValues(array);
+    return _createBufferedCryptoSource(cryptoObject);
+  }
+
+  /**
+   * getRandomValues の呼び出し回数を減らすため、まとめて取得した値を順に渡す乱数源を作る。
+   * 1回の生成の中だけで使い、取得した値を生成の外に残さない。
+   */
+  function _createBufferedCryptoSource(cryptoObject) {
+    const pool = new Uint32Array(RANDOM_POOL_SIZE);
+    let position = RANDOM_POOL_SIZE;
+    return (array) => {
+      for (let index = 0; index < array.length; index += 1) {
+        if (position >= RANDOM_POOL_SIZE) {
+          cryptoObject.getRandomValues(pool);
+          position = 0;
+        }
+        array[index] = pool[position];
+        position += 1;
+      }
+      return array;
+    };
   }
 
   /**
