@@ -1,56 +1,27 @@
 # 公開ページのテスト
-# 実行日時: 2026-10-27 16:27:26 JST
+# 実行日時: 2026-10-27 16:31:42 JST
 # コマンド: node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=evidence\junit-published-e2e.xml tests/e2e/published.test.js
 
 [STAT] P-01 (chromium-desktop) コンソール警告・エラー=0 自サイト以外=0
 [STAT] P-01 (webkit-iphone) コンソール警告・エラー=0 自サイト以外=0
-✔ [N-04][N-10] P-01 公開URL(HTTPS)でコンソールの警告・エラーが0件、自サイト以外へのリクエストが0件 (5061.7854ms)
+✔ [N-04][N-10] P-01 公開URL(HTTPS)でコンソールの警告・エラーが0件、自サイト以外へのリクエストが0件 (2622.4188ms)
 [STAT] P-02 注入の結果 例外=あり 違反=[{"directive":"script-src-elem","blockedURI":"https://example.com/injected-by-test.js"}]
-✔ [N-04] P-02 外部スクリプトを注入しても実行されず、CSP違反として検出される (444.9025ms)
-✔ [F-06][F-07][F-09][F-10] P-03 スモークテスト(生成・再生成・コピー・設定の復元・伏せ字) (800.7543ms)
+✔ [N-04] P-02 外部スクリプトを注入しても実行されず、CSP違反として検出される (439.7191ms)
+✔ [F-06][F-07][F-09][F-10] P-03 スモークテスト(生成・再生成・コピー・設定の復元・伏せ字) (765.11ms)
 [STAT] P-04 (chromium-desktop) 幅=375 scrollWidth=375
 [STAT] P-04 (webkit-iphone) 幅=375 scrollWidth=375
-[STAT] P-05 公開リポジトリ ファイル=69 検査したテキスト=56 検出=0 切り詰め=false
-[STAT] P-06 公開ページのリクエスト 合計=33 自サイト以外=1
-✔ [N-08] P-04 公開URLで幅375pxでも横スクロールが出ない (3693.1588ms)
-✔ [N-10] P-05 公開リポジトリの内容(gh api で取得)に秘密情報・個人情報が0件 (37143.8414ms)
-✖ [N-04] P-06 公開ページの記録したリクエストを保存する (3.8104ms)
+[STAT] P-05 公開リポジトリ ファイル=76 検査したテキスト=60 検出=0 切り詰め=false
+[STAT] P-06 公開ページのリクエスト 合計=33 自サイト以外=0 P-02で意図的に注入(CSPで阻止)=1
+✔ [N-08] P-04 公開URLで幅375pxでも横スクロールが出ない (1788.732ms)
+✔ [N-10] P-05 公開リポジトリの内容(gh api で取得)に秘密情報・個人情報が0件 (38266.8201ms)
+✔ [N-04] P-06 公開ページの記録したリクエストを保存する (2.2138ms)
 ℹ tests 6
 ℹ suites 0
-ℹ pass 5
-ℹ fail 1
+ℹ pass 6
+ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 47762.7651
+ℹ duration_ms 44508.5658
 
-✖ failing tests:
-
-test at tests\e2e\published.test.js:177:1
-✖ [N-04] P-06 公開ページの記録したリクエストを保存する (3.8104ms)
-  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
-  + actual - expected
-  
-  + [
-  +   {
-  +     browser: 'chromium-desktop',
-  +     method: 'GET',
-  +     resourceType: 'script',
-  +     url: 'https://example.com/injected-by-test.js'
-  +   }
-  + ]
-  - []
-  
-      at TestContext.<anonymous> (C:\Claude\password-generator\tests\e2e\published.test.js:184:10)
-      at Test.runInAsyncScope (node:async_hooks:227:14)
-      at Test.run (node:internal/test_runner/test:1325:25)
-      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
-    generatedMessage: true,
-    code: 'ERR_ASSERTION',
-    actual: [ { browser: 'chromium-desktop', method: 'GET', url: 'https://example.com/injected-by-test.js', resourceType: 'script' } ],
-    expected: [],
-    operator: 'deepStrictEqual',
-    diff: 'simple'
-  }
-
-終了コード: 1
+終了コード: 0

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-	<testcase name="[F-04] U-06 除外ONのとき 0 O 1 l I が1文字も出ない" time="0.125953" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
-	<testcase name="[F-04] U-07 除外OFFのとき 0 O 1 l I が出るようになる" time="0.096635" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
-	<testcase name="[F-05] U-08 指定した記号以外の記号が出ない" time="0.079161" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
-	<testcase name="[F-05] U-09 使う記号の重複は除去される" time="0.000611" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
-	<testcase name="[F-05] U-10 空白・全角・絵文字・英数字は拒否される" time="0.001478" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
-	<testcase name="[F-05] U-11 記号がONで0種類のときはエラーになる" time="0.000688" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
-	<testcase name="[F-05] U-12 記号がOFFのときは、記号欄の内容(不正な値や空欄でも)を使わない" time="0.022714" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
-	<testcase name="[F-02][F-03] U-03 文字種のON/OFF全15通りで、ONの文字種だけが使われ、それぞれ1文字以上含まれる" time="0.061845" classname="test" file="C:\Claude\password-generator\tests\unit\characterTypes.test.js"/>
-	<testcase name="[F-02] U-04 文字種が全部OFFのときはエラーになる" time="0.001445" classname="test" file="C:\Claude\password-generator\tests\unit\characterTypes.test.js"/>
-	<testcase name="[F-02] U-05 有効な文字種の数が長さを超える設定は拒否される(composePassword を直接呼ぶ)" time="0.000591" classname="test" file="C:\Claude\password-generator\tests\unit\characterTypes.test.js"/>
-	<testcase name="[F-01] U-01 長さ8・16・24・128で指定どおりの長さになる" time="0.006194" classname="test" file="C:\Claude\password-generator\tests\unit\length.test.js"/>
-	<testcase name="[F-01] U-02 範囲外・空欄・負数・小数・文字列・NaN・1e9はエラーになり、生成しない(固まらない)" time="0.002533" classname="test" file="C:\Claude\password-generator\tests\unit\length.test.js"/>
-	<testcase name="[N-02] U-13 棄却サンプリングの境界値(limit ちょうどは棄却、limit-1 は採用)" time="0.003571" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
-	<testcase name="[N-02] U-14 n が2のべき乗のときは棄却されない" time="0.001107" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
-	<testcase name="[N-02] U-15 棄却が上限回数まで続いたら、無限に繰り返さずエラーになる" time="0.002314" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
-	<testcase name="[N-03] U-16 シャッフルが Fisher–Yates(既知の乱数列で期待どおりの並び)" time="0.001173" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
-	<testcase name="[N-03] U-17 シャッフル後も文字種の保証が維持される(既知の乱数列)" time="0.000909" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
-	<testcase name="[N-06] U-18 文字種・除外・使う記号・重複除去を変えたときの文字数 N が正しい" time="0.003901" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
-	<testcase name="[N-06] U-19 強度が L × log2(N) と一致する(手計算値と比較)" time="0.000677" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
-	<testcase name="[N-06] U-20 強度の段階の閾値(50・80・112 bit)の境界" time="0.000346" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
-	<testcase name="[N-09] U-21 保存された設定値の検証(不正なJSON・範囲外・型違い・未知の項目・null は初期値に戻る)" time="0.003596" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
-	<testcase name="[N-05][F-09] U-22 保存する文字列は設定の項目だけで、パスワードを含まない" time="0.001462" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
+	<testcase name="[F-04] U-06 除外ONのとき 0 O 1 l I が1文字も出ない" time="0.124149" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
+	<testcase name="[F-04] U-07 除外OFFのとき 0 O 1 l I が出るようになる" time="0.094079" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
+	<testcase name="[F-05] U-08 指定した記号以外の記号が出ない" time="0.077732" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
+	<testcase name="[F-05] U-09 使う記号の重複は除去される" time="0.000272" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
+	<testcase name="[F-05] U-10 空白・全角・絵文字・英数字は拒否される" time="0.001607" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
+	<testcase name="[F-05] U-11 記号がONで0種類のときはエラーになる" time="0.000632" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
+	<testcase name="[F-05] U-12 記号がOFFのときは、記号欄の内容(不正な値や空欄でも)を使わない" time="0.024316" classname="test" file="C:\Claude\password-generator\tests\unit\ambiguousAndSymbols.test.js"/>
+	<testcase name="[F-02][F-03] U-03 文字種のON/OFF全15通りで、ONの文字種だけが使われ、それぞれ1文字以上含まれる" time="0.062612" classname="test" file="C:\Claude\password-generator\tests\unit\characterTypes.test.js"/>
+	<testcase name="[F-02] U-04 文字種が全部OFFのときはエラーになる" time="0.001172" classname="test" file="C:\Claude\password-generator\tests\unit\characterTypes.test.js"/>
+	<testcase name="[F-02] U-05 有効な文字種の数が長さを超える設定は拒否される(composePassword を直接呼ぶ)" time="0.000554" classname="test" file="C:\Claude\password-generator\tests\unit\characterTypes.test.js"/>
+	<testcase name="[F-01] U-01 長さ8・16・24・128で指定どおりの長さになる" time="0.008003" classname="test" file="C:\Claude\password-generator\tests\unit\length.test.js"/>
+	<testcase name="[F-01] U-02 範囲外・空欄・負数・小数・文字列・NaN・1e9はエラーになり、生成しない(固まらない)" time="0.002144" classname="test" file="C:\Claude\password-generator\tests\unit\length.test.js"/>
+	<testcase name="[N-02] U-13 棄却サンプリングの境界値(limit ちょうどは棄却、limit-1 は採用)" time="0.003426" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
+	<testcase name="[N-02] U-14 n が2のべき乗のときは棄却されない" time="0.000990" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
+	<testcase name="[N-02] U-15 棄却が上限回数まで続いたら、無限に繰り返さずエラーになる" time="0.002380" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
+	<testcase name="[N-03] U-16 シャッフルが Fisher–Yates(既知の乱数列で期待どおりの並び)" time="0.001208" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
+	<testcase name="[N-03] U-17 シャッフル後も文字種の保証が維持される(既知の乱数列)" time="0.000923" classname="test" file="C:\Claude\password-generator\tests\unit\randomness.test.js"/>
+	<testcase name="[N-06] U-18 文字種・除外・使う記号・重複除去を変えたときの文字数 N が正しい" time="0.003997" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
+	<testcase name="[N-06] U-19 強度が L × log2(N) と一致する(手計算値と比較)" time="0.000844" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
+	<testcase name="[N-06] U-20 強度の段階の閾値(50・80・112 bit)の境界" time="0.000357" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
+	<testcase name="[N-09] U-21 保存された設定値の検証(不正なJSON・範囲外・型違い・未知の項目・null は初期値に戻る)" time="0.003734" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
+	<testcase name="[N-05][F-09] U-22 保存する文字列は設定の項目だけで、パスワードを含まない" time="0.001220" classname="test" file="C:\Claude\password-generator\tests\unit\strengthAndSettings.test.js"/>
 	<!-- tests 22 -->
 	<!-- suites 0 -->
 	<!-- pass 22 -->
@@ -29,5 +29,5 @@
 	<!-- cancelled 0 -->
 	<!-- skipped 0 -->
 	<!-- todo 0 -->
-	<!-- duration_ms 1102.671 -->
+	<!-- duration_ms 1127.4714 -->
 </testsuites>

@@ -1,56 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-	<testcase name="[N-01] S-01 アプリ本体に Math.random・Date.now・performance.now・シード等がなく、乱数は getRandomValues だけ" time="0.011455" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
-	<testcase name="[N-09] S-02 アプリ本体に innerHTML・outerHTML・insertAdjacentHTML・eval・new Function・document.write がない" time="0.002864" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
-	<testcase name="[N-04] S-03 index.html に仕様どおりのCSPがあり、インラインスクリプト・イベント属性・外部URLがない" time="0.005728" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
-	<testcase name="[N-04] S-04 アプリ本体のJS・CSSに外部URLと通信APIがない" time="0.001835" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
-	<testcase name="[N-04][N-10] S-05 リポジトリ内に秘密情報らしい文字列がない" time="0.032024" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js" failure="Expected values to be strictly deep-equal:&#10;+ actual - expected&#10;&#10;+ [&#10;+   'evidence/publish-log.txt:10 汎用語(トークン)',&#10;+   'evidence/publish-log.txt:11 汎用語(トークン)'&#10;+ ]&#10;- []&#10;">
-		<failure type="testCodeFailure" message="Expected values to be strictly deep-equal:&#10;+ actual - expected&#10;&#10;+ [&#10;+   'evidence/publish-log.txt:10 汎用語(トークン)',&#10;+   'evidence/publish-log.txt:11 汎用語(トークン)'&#10;+ ]&#10;- []">
-[Error [ERR_TEST_FAILURE]: Expected values to be strictly deep-equal:
-+ actual - expected
-
-+ [
-+   'evidence/publish-log.txt:10 汎用語(トークン)',
-+   'evidence/publish-log.txt:11 汎用語(トークン)'
-+ ]
-- []
-] {
-  code: 'ERR_TEST_FAILURE',
-  failureType: 'testCodeFailure',
-  cause: AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
-  + actual - expected
-  
-  + [
-  +   'evidence/publish-log.txt:10 汎用語(トークン)',
-  +   'evidence/publish-log.txt:11 汎用語(トークン)'
-  + ]
-  - []
-  
-      at TestContext.&lt;anonymous> (C:\Claude\password-generator\tests\security\staticChecks.test.js:127:10)
-      at Test.runInAsyncScope (node:async_hooks:227:14)
-      at Test.run (node:internal/test_runner/test:1325:25)
-      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
-      at Test.postRun (node:internal/test_runner/test:1465:19)
-      at Test.run (node:internal/test_runner/test:1390:12)
-      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
-    generatedMessage: true,
-    code: 'ERR_ASSERTION',
-    actual: [ 'evidence/publish-log.txt:10 汎用語(トークン)', 'evidence/publish-log.txt:11 汎用語(トークン)' ],
-    expected: [],
-    operator: 'deepStrictEqual',
-    diff: 'simple'
-  }
-}
-		</failure>
-	</testcase>
-	<testcase name="[N-10] S-06 リポジトリ内に個人情報(ホームのパス・PC名・ユーザー名・メール・IPアドレス)がない" time="0.033747" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
-	<testcase name="[静的解析] S-07 ESLint の警告・エラーが0件" time="1.356841" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
+	<testcase name="[N-01] S-01 アプリ本体に Math.random・Date.now・performance.now・シード等がなく、乱数は getRandomValues だけ" time="0.011157" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
+	<testcase name="[N-09] S-02 アプリ本体に innerHTML・outerHTML・insertAdjacentHTML・eval・new Function・document.write がない" time="0.003722" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
+	<testcase name="[N-04] S-03 index.html に仕様どおりのCSPがあり、インラインスクリプト・イベント属性・外部URLがない" time="0.006853" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
+	<testcase name="[N-04] S-04 アプリ本体のJS・CSSに外部URLと通信APIがない" time="0.001772" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
+	<testcase name="[N-04][N-10] S-05 リポジトリ内に秘密情報らしい文字列がない" time="0.028912" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
+	<testcase name="[N-10] S-06 リポジトリ内に個人情報(ホームのパス・PC名・ユーザー名・メール・IPアドレス)がない" time="0.039328" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
+	<testcase name="[静的解析] S-07 ESLint の警告・エラーが0件" time="1.408313" classname="test" file="C:\Claude\password-generator\tests\security\staticChecks.test.js"/>
 	<!-- tests 7 -->
 	<!-- suites 0 -->
-	<!-- pass 6 -->
-	<!-- fail 1 -->
+	<!-- pass 7 -->
+	<!-- fail 0 -->
 	<!-- cancelled 0 -->
 	<!-- skipped 0 -->
 	<!-- todo 0 -->
-	<!-- duration_ms 1608.0616 -->
+	<!-- duration_ms 1671.8521 -->
 </testsuites>

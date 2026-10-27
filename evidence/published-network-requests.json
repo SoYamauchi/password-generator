@@ -1,7 +1,8 @@
 {
   "origin": "https://soyamauchi.github.io",
   "total": 33,
-  "external": [
+  "external": [],
+  "intentionalInjections": [
     {
       "browser": "chromium-desktop",
       "method": "GET",

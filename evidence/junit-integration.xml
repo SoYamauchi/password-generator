@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-	<testcase name="[F-01][F-02][F-03][F-04][F-05] I-01 既定と複数の設定で10万件生成し、長さ・文字・保証・除外が1件も破れない" time="3.805922" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
-	<testcase name="[N-02] I-02 文字の偏り: 同じ文字種の中の各文字の出現回数が均等(カイ二乗検定・有意水準0.1%)" time="0.090477" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
-	<testcase name="[N-02] I-03 文字種ごとの出現数が期待値 1 + (L - k) × m / N と合う(カイ二乗検定・有意水準0.1%)" time="0.081562" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
-	<testcase name="[N-02] I-04 モジュロバイアスの検出条件: n = 3×2^30 で添字を3区間に分けると均等(カイ二乗検定・有意水準0.1%)" time="0.366182" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
-	<testcase name="[N-03] I-05 位置の偏り: 各文字種の文字が現れる位置が均等(位置ごとのカイ二乗検定・有意水準0.1%)" time="0.250928" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
-	<testcase name="[N-01] I-06 重複なし: 長さ24・全文字種で10万件生成して重複が0件(暗号論的な安全性の証明ではない)" time="0.013763" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
-	<testcase name="[N-01] I-07 乱数源の差し替え: 同じ有限の値の列からは同じパスワードになり、出力が列だけで決まる" time="0.007245" classname="test" file="C:\Claude\password-generator\tests\integration\randomSource.test.js"/>
-	<testcase name="[N-01] I-08 Math.random を例外を投げるダミーにしても、生成が成功する" time="0.006432" classname="test" file="C:\Claude\password-generator\tests\integration\randomSource.test.js"/>
-	<testcase name="[N-01][N-09] I-09 crypto.getRandomValues が使えないと、別の乱数に切り替わらずエラーになり、生成されない" time="0.000913" classname="test" file="C:\Claude\password-generator\tests\integration\randomSource.test.js"/>
-	<testcase name="[N-08] I-10 生成時間の計測(Node、既定の設定)" time="0.039875" classname="test" file="C:\Claude\password-generator\tests\integration\randomSource.test.js"/>
-	<testcase name="[N-01] I-11 (任意)NIST SP 800-22 の頻度検定・連の検定の簡易版(安全性の証明ではない)" time="2.829141" classname="test" file="C:\Claude\password-generator\tests\integration\statisticalTests.test.js"/>
+	<testcase name="[F-01][F-02][F-03][F-04][F-05] I-01 既定と複数の設定で10万件生成し、長さ・文字・保証・除外が1件も破れない" time="3.898887" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
+	<testcase name="[N-02] I-02 文字の偏り: 同じ文字種の中の各文字の出現回数が均等(カイ二乗検定・有意水準0.1%)" time="0.108132" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
+	<testcase name="[N-02] I-03 文字種ごとの出現数が期待値 1 + (L - k) × m / N と合う(カイ二乗検定・有意水準0.1%)" time="0.098797" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
+	<testcase name="[N-02] I-04 モジュロバイアスの検出条件: n = 3×2^30 で添字を3区間に分けると均等(カイ二乗検定・有意水準0.1%)" time="0.383058" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
+	<testcase name="[N-03] I-05 位置の偏り: 各文字種の文字が現れる位置が均等(位置ごとのカイ二乗検定・有意水準0.1%)" time="0.238924" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
+	<testcase name="[N-01] I-06 重複なし: 長さ24・全文字種で10万件生成して重複が0件(暗号論的な安全性の証明ではない)" time="0.014637" classname="test" file="C:\Claude\password-generator\tests\integration\generation.test.js"/>
+	<testcase name="[N-01] I-07 乱数源の差し替え: 同じ有限の値の列からは同じパスワードになり、出力が列だけで決まる" time="0.007598" classname="test" file="C:\Claude\password-generator\tests\integration\randomSource.test.js"/>
+	<testcase name="[N-01] I-08 Math.random を例外を投げるダミーにしても、生成が成功する" time="0.006973" classname="test" file="C:\Claude\password-generator\tests\integration\randomSource.test.js"/>
+	<testcase name="[N-01][N-09] I-09 crypto.getRandomValues が使えないと、別の乱数に切り替わらずエラーになり、生成されない" time="0.000904" classname="test" file="C:\Claude\password-generator\tests\integration\randomSource.test.js"/>
+	<testcase name="[N-08] I-10 生成時間の計測(Node、既定の設定)" time="0.041153" classname="test" file="C:\Claude\password-generator\tests\integration\randomSource.test.js"/>
+	<testcase name="[N-01] I-11 (任意)NIST SP 800-22 の頻度検定・連の検定の簡易版(安全性の証明ではない)" time="2.994157" classname="test" file="C:\Claude\password-generator\tests\integration\statisticalTests.test.js"/>
 	<!-- tests 11 -->
 	<!-- suites 0 -->
 	<!-- pass 11 -->
@@ -18,5 +18,5 @@
 	<!-- cancelled 0 -->
 	<!-- skipped 0 -->
 	<!-- todo 0 -->
-	<!-- duration_ms 7930.7891 -->
+	<!-- duration_ms 8241.0444 -->
 </testsuites>

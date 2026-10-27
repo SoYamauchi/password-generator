@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-	<testcase name="[F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (chromium-desktop)" time="0.667216" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (chromium-desktop)" time="0.986586" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (chromium-desktop)" time="0.270526" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (chromium-desktop)" time="0.277419" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (chromium-desktop)" time="0.230756" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (chromium-desktop)" time="0.294567" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (chromium-desktop)" time="0.453508" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (chromium-desktop)" time="0.802905" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (chromium-desktop)" time="0.425397" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (chromium-desktop)" time="0.466369" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (chromium-desktop)" time="0.465658" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[N-08] E-10 生成にかかる時間が目安の100ms以内 (chromium-desktop)" time="0.184659" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (webkit-iphone)" time="0.754147" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (webkit-iphone)" time="2.103200" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (webkit-iphone)" time="0.397358" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (webkit-iphone)" time="0.518177" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (webkit-iphone)" time="0.397484" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (webkit-iphone)" time="0.607746" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (webkit-iphone)" time="0.957418" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (webkit-iphone)" time="1.027759" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (webkit-iphone)" time="0.835948" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (webkit-iphone)" time="0.762138" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (webkit-iphone)" time="0.383202" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[N-08] E-10 生成にかかる時間が目安の100ms以内 (webkit-iphone)" time="0.259734" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
-	<testcase name="[N-04] E-07 全テスト中の外部通信が0件で、CSPのmetaが仕様どおり" time="0.204437" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (chromium-desktop)" time="0.808278" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (chromium-desktop)" time="0.982521" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (chromium-desktop)" time="0.301668" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (chromium-desktop)" time="0.279545" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (chromium-desktop)" time="0.231265" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (chromium-desktop)" time="0.294739" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (chromium-desktop)" time="0.468608" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (chromium-desktop)" time="0.828930" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (chromium-desktop)" time="0.418923" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (chromium-desktop)" time="0.481346" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (chromium-desktop)" time="0.483291" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[N-08] E-10 生成にかかる時間が目安の100ms以内 (chromium-desktop)" time="0.190667" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (webkit-iphone)" time="0.764308" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (webkit-iphone)" time="2.131667" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (webkit-iphone)" time="0.507854" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (webkit-iphone)" time="0.522059" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (webkit-iphone)" time="0.391946" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (webkit-iphone)" time="0.544575" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (webkit-iphone)" time="0.891013" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (webkit-iphone)" time="1.049176" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (webkit-iphone)" time="0.758089" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (webkit-iphone)" time="0.766843" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (webkit-iphone)" time="0.381099" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[N-08] E-10 生成にかかる時間が目安の100ms以内 (webkit-iphone)" time="0.255082" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
+	<testcase name="[N-04] E-07 全テスト中の外部通信が0件で、CSPのmetaが仕様どおり" time="0.214709" classname="test" file="C:\Claude\password-generator\tests\e2e\app.test.js"/>
 	<!-- tests 25 -->
 	<!-- suites 0 -->
 	<!-- pass 25 -->
@@ -32,5 +32,5 @@
 	<!-- cancelled 0 -->
 	<!-- skipped 0 -->
 	<!-- todo 0 -->
-	<!-- duration_ms 15331.0724 -->
+	<!-- duration_ms 15562.7941 -->
 </testsuites>
