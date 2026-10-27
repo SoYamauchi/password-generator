@@ -256,3 +256,72 @@ X-Fastly-Request-ID: e1df38cf64349a8c835ec42b5fb1c3994000cb53
 # SHA-256 の比較(1/3回目): 一致 4/4
 
 # 公開ページの検証: 合格
+
+========== 追加コミットの push と再検証(2026-10-27 16:53:32 JST) ==========
+# 確認: 秘密情報の検査(作業ツリー 59 ファイルと git 履歴) 検出 0 件
+
+# 確認: 個人情報の検査(作業ツリーと git 履歴) 検出 0 件
+
+# 確認: git のメールアドレスが noreply か → 設定: はい、履歴の noreply 以外: 0 件
+
+$ git status --porcelain
+
+(終了コード: 0)
+
+# 確認: .gitignore に node_modules/ がある: はい、node_modules の追跡: なし、未コミットの変更: なし
+
+$ git push origin main
+To https://github.com/SoYamauchi/password-generator.git
+   44cea50..b0362ee  main -> main
+(終了コード: 0)
+
+$ gh api repos/SoYamauchi/password-generator/pages/builds/latest -q [.status, .commit] | join(" ")
+building b0362eea70ac6c4c52e7557e07412e444c67a688
+(終了コード: 0)
+
+# Pages のビルド状況(1/20回目): building commit=b0362eea70ac6c4c52e7557e07412e444c67a688
+
+$ gh api repos/SoYamauchi/password-generator/pages/builds/latest -q [.status, .commit] | join(" ")
+built b0362eea70ac6c4c52e7557e07412e444c67a688
+(終了コード: 0)
+
+# Pages のビルド状況(2/20回目): built commit=b0362eea70ac6c4c52e7557e07412e444c67a688
+
+$ gh api repos/SoYamauchi/password-generator/pages -q .html_url
+https://soyamauchi.github.io/password-generator/
+(終了コード: 0)
+
+# 公開URL(html_url): https://soyamauchi.github.io/password-generator/
+
+$ curl -sI https://soyamauchi.github.io/password-generator/
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 3683
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+Last-Modified: Tue, 27 Oct 2026 07:53:26 GMT
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=31556952
+ETag: "6ae05876-e63"
+expires: Tue, 27 Oct 2026 08:03:33 GMT
+Cache-Control: max-age=600
+x-proxy-cache: MISS
+X-GitHub-Request-Id: F3F6:C9A59:83A15:88FC5:6AE0587C
+x-github-edge-region: japaneast
+Accept-Ranges: bytes
+Age: 0
+Date: Tue, 27 Oct 2026 07:53:33 GMT
+Via: 1.1 varnish
+X-Served-By: cache-nrt-rjaa8190033-NRT
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1793087613.168967,VS0,VE176
+Vary: Accept-Encoding
+X-Fastly-Request-ID: 093503341d90f5aa62cd4e41fc0b44f064d1dad6
+(終了コード: 0)
+
+# curl -sI の結果: HTTP 200、HTTPS はい
+
+# SHA-256 の比較(1/3回目): 一致 4/4
+
+# 公開ページの検証: 合格

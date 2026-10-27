@@ -1,9 +1,9 @@
 # テスト結果レポート
 
-- 実行日時: 2026-10-27 16:51:30 JST
+- 実行日時: 2026-10-27 16:53:39 JST
 - 環境: Windows_NT 10.0.26300、Node v24.18.0、chromium 156.0.8078.4・webkit 27.2(詳細は evidence/environment.txt)
-- テストケースの件数: 合格 67・不合格 0・未実施 6(合計 73。JUnit から集計)
-- テスト観点(下表の行)の件数: 合 31・否 0・未実施 4(合計 35)
+- テストケースの件数: 合格 73・不合格 0・未実施 0(合計 73。JUnit から集計)
+- テスト観点(下表の行)の件数: 合 35・否 0・未実施 0(合計 35)
 - このファイルは scripts/runEvidence.js が JUnit とログから機械的に生成したもので、手で書き換えていない。
 
 ## テスト観点と結果(要件定義書 7-2 の全行と、追加の観点)
@@ -40,10 +40,10 @@
 | N-01, N-09 | [ブラウザ] getRandomValues を削除するとエラーで表示しない、Math.random が例外でも生成成功 | [N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (chromium-desktop)<br>[N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:14, evidence/e2e.log:29 |  |
 | N-08 | [ブラウザ] 幅375pxで横スクロールなし、ボタン高さ44px以上、スクリーンショット | [N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (chromium-desktop)<br>[N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:16, evidence/e2e.log:31 |  |
 | N-08 | [ブラウザ] 生成時間が目安の100ms以内(計測値をログに出す) | [N-08] I-10 生成時間の計測(Node、既定の設定)<br>[N-08] E-10 生成にかかる時間が目安の100ms以内 (chromium-desktop)<br>[N-08] E-10 生成にかかる時間が目安の100ms以内 (webkit-iphone) | 合 | 2026-10-27 | evidence/integration.log:33, evidence/e2e.log:18, evidence/e2e.log:33 |  |
-| N-04, N-10 | [公開ページ] 公開URL(HTTPS)でコンソールの警告・エラー0件、自サイト以外へのリクエスト0件、外部スクリプト注入がCSPで阻止される | [N-04][N-10] P-01 公開URL(HTTPS)でコンソールの警告・エラーが0件、自サイト以外へのリクエストが0件<br>[N-04] P-02 外部スクリプトを注入しても実行されず、CSP違反として検出される<br>[N-04] P-06 公開ページの記録したリクエストを保存する | 未実施 | 2026-10-27 | evidence/published-e2e.log:5, evidence/published-e2e.log:6, evidence/published-e2e.log:10 | 理由: 公開URL(BASE_URL=https://...)が指定されていないため未実施。代わりの確認手順: README の「手動確認」を参照 |
-| F-06, F-07, F-09, F-10 | [公開ページ] スモークテスト(生成・再生成・コピー一致・設定の復元・伏せ字) | [F-06][F-07][F-09][F-10] P-03 スモークテスト(生成・再生成・コピー・設定の復元・伏せ字) | 未実施 | 2026-10-27 | evidence/published-e2e.log:7 | 理由: 公開URL(BASE_URL=https://...)が指定されていないため未実施。代わりの確認手順: README の「手動確認」を参照 |
-| N-08 | [公開ページ] 公開URLで幅375pxでも横スクロールなし、スクリーンショット | [N-08] P-04 公開URLで幅375pxでも横スクロールが出ない | 未実施 | 2026-10-27 | evidence/published-e2e.log:8 | 理由: 公開URL(BASE_URL=https://...)が指定されていないため未実施。代わりの確認手順: README の「手動確認」を参照 |
-| N-10 | [公開ページ] 公開リポジトリの内容(gh api)に秘密情報・個人情報が0件 | [N-10] P-05 公開リポジトリの内容(gh api で取得)に秘密情報・個人情報が0件 | 未実施 | 2026-10-27 | evidence/published-e2e.log:9 | 理由: 公開URL(BASE_URL=https://...)が指定されていないため未実施。代わりの確認手順: README の「手動確認」を参照 |
+| N-04, N-10 | [公開ページ] 公開URL(HTTPS)でコンソールの警告・エラー0件、自サイト以外へのリクエスト0件、外部スクリプト注入がCSPで阻止される | [N-04][N-10] P-01 公開URL(HTTPS)でコンソールの警告・エラーが0件、自サイト以外へのリクエストが0件<br>[N-04] P-02 外部スクリプトを注入しても実行されず、CSP違反として検出される<br>[N-04] P-06 公開ページの記録したリクエストを保存する | 合 | 2026-10-27 | evidence/published-e2e.log:7, evidence/published-e2e.log:9, evidence/published-e2e.log:17 |  |
+| F-06, F-07, F-09, F-10 | [公開ページ] スモークテスト(生成・再生成・コピー一致・設定の復元・伏せ字) | [F-06][F-07][F-09][F-10] P-03 スモークテスト(生成・再生成・コピー・設定の復元・伏せ字) | 合 | 2026-10-27 | evidence/published-e2e.log:10 |  |
+| N-08 | [公開ページ] 公開URLで幅375pxでも横スクロールなし、スクリーンショット | [N-08] P-04 公開URLで幅375pxでも横スクロールが出ない | 合 | 2026-10-27 | evidence/published-e2e.log:15 |  |
+| N-10 | [公開ページ] 公開リポジトリの内容(gh api)に秘密情報・個人情報が0件 | [N-10] P-05 公開リポジトリの内容(gh api で取得)に秘密情報・個人情報が0件 | 合 | 2026-10-27 | evidence/published-e2e.log:16 |  |
 | 追加(免責事項) | [ブラウザ] 免責事項(生成したパスワードの利用は自己責任)が画面に表示される | [追加] E-11 免責事項(自己責任であること)が画面に表示される (chromium-desktop)<br>[追加] E-11 免責事項(自己責任であること)が画面に表示される (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:19, evidence/e2e.log:34 |  |
 
 照合: 7-2 の観点 34 行がすべて表にある(追加の観点 1 行を含め、requirementMatrix.js の全行を出力)。
@@ -51,7 +51,7 @@
 ## 静的解析とカバレッジ
 
 - ESLint: 終了コード 0(警告・エラー0件)(evidence/eslint.log)
-- カバレッジ: passwordGenerator.js の行カバレッジ 98.58%、分岐 97.17%、関数 100.00%(evidence/coverage.txt)
+- カバレッジ: passwordGenerator.js の行カバレッジ 99.06%、分岐 98.10%、関数 100.00%(evidence/coverage.txt)
 - 統計値: evidence/statistics.log、リクエスト一覧: evidence/network-requests.json
 - スクリーンショット: evidence/screenshots/(写っているパスワードはテスト用の使い捨ての値)
 
@@ -67,14 +67,14 @@
 
 - 公開URL: https://soyamauchi.github.io/password-generator/
 - リポジトリ: https://github.com/SoYamauchi/password-generator
-- 確認日時: 2026-10-27 16:34:06 JST
+- 確認日時: 2026-10-27 16:53:32 JST
 - curl -sI: HTTP 200、HTTPS はい → 合(evidence/publish-log.txt)
 
 | ファイル | ローカルの SHA-256 | 公開ページの SHA-256 | 一致 |
 | --- | --- | --- | --- |
-| index.html | 6092c44057950ab9c36dfad6661a90584f65a3d30ff84fc57bdf085424f09ce1 | 6092c44057950ab9c36dfad6661a90584f65a3d30ff84fc57bdf085424f09ce1 | 合 |
+| index.html | 3b2d634dc2a3c920387792cc1c753bac46007b122f32439eedc0e720c5c3b324 | 3b2d634dc2a3c920387792cc1c753bac46007b122f32439eedc0e720c5c3b324 | 合 |
 | passwordGenerator.js | 9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7 | 9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7 | 合 |
 | app.js | 5116b001caa9b5a98576f4a8424ffe04d083723823660695f66dc428905a8d46 | 5116b001caa9b5a98576f4a8424ffe04d083723823660695f66dc428905a8d46 | 合 |
-| style.css | b496cb22292a9ff9190c6884bee988c70e287a9eb39e5d065e88b82a0439ea75 | b496cb22292a9ff9190c6884bee988c70e287a9eb39e5d065e88b82a0439ea75 | 合 |
+| style.css | f3fd871e3ead4927c30a1eec22b4c7ed25e51436bda7343ae34c271c09b7ca90 | f3fd871e3ead4927c30a1eec22b4c7ed25e51436bda7343ae34c271c09b7ca90 | 合 |
 
 (evidence/deployed-hash-check.txt)

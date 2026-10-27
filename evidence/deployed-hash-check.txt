@@ -1,10 +1,10 @@
-確認日時: 2026-10-27 16:34:06 JST
+確認日時: 2026-10-27 16:53:32 JST
 公開URL: https://soyamauchi.github.io/password-generator/
 比較方法: ローカルのファイルと、公開URLから取得したファイルの SHA-256 を比較
 
 index.html
-  ローカル: 6092c44057950ab9c36dfad6661a90584f65a3d30ff84fc57bdf085424f09ce1
-  公開    : 6092c44057950ab9c36dfad6661a90584f65a3d30ff84fc57bdf085424f09ce1
+  ローカル: 3b2d634dc2a3c920387792cc1c753bac46007b122f32439eedc0e720c5c3b324
+  公開    : 3b2d634dc2a3c920387792cc1c753bac46007b122f32439eedc0e720c5c3b324
   判定    : 一致
 passwordGenerator.js
   ローカル: 9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7
@@ -15,8 +15,8 @@ app.js
   公開    : 5116b001caa9b5a98576f4a8424ffe04d083723823660695f66dc428905a8d46
   判定    : 一致
 style.css
-  ローカル: b496cb22292a9ff9190c6884bee988c70e287a9eb39e5d065e88b82a0439ea75
-  公開    : b496cb22292a9ff9190c6884bee988c70e287a9eb39e5d065e88b82a0439ea75
+  ローカル: f3fd871e3ead4927c30a1eec22b4c7ed25e51436bda7343ae34c271c09b7ca90
+  公開    : f3fd871e3ead4927c30a1eec22b4c7ed25e51436bda7343ae34c271c09b7ca90
   判定    : 一致
 
 総合判定: 合(全ファイル一致)

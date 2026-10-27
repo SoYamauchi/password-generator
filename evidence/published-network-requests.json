@@ -1,0 +1,213 @@
+{
+  "origin": "https://soyamauchi.github.io",
+  "total": 33,
+  "external": [],
+  "intentionalInjections": [
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://example.com/injected-by-test.js",
+      "resourceType": "script"
+    }
+  ],
+  "requests": [
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://example.com/injected-by-test.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "https://soyamauchi.github.io/password-generator/app.js",
+      "resourceType": "script"
+    }
+  ]
+}

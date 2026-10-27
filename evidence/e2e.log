@@ -1,40 +1,40 @@
 # ブラウザテスト
-# 実行日時: 2026-10-27 16:51:59 JST
+# 実行日時: 2026-10-27 16:54:14 JST
 # コマンド: node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=evidence\junit-e2e.xml tests/e2e/app.test.js
 
-✔ [F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (chromium-desktop) (899.6651ms)
-✔ [F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (chromium-desktop) (1736.5094ms)
-✔ [F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (chromium-desktop) (356.2996ms)
-✔ [F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (chromium-desktop) (424.3857ms)
-✔ [F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (chromium-desktop) (354.8613ms)
-✔ [F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (chromium-desktop) (453.0761ms)
-✔ [F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (chromium-desktop) (675.4085ms)
-✔ [F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (chromium-desktop) (1068.8637ms)
-✔ [F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (chromium-desktop) (649.4973ms)
-✔ [N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (chromium-desktop) (824.0059ms)
+✔ [F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (chromium-desktop) (909.4792ms)
+✔ [F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (chromium-desktop) (1762.932ms)
+✔ [F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (chromium-desktop) (367.923ms)
+✔ [F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (chromium-desktop) (479.3329ms)
+✔ [F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (chromium-desktop) (359.9416ms)
+✔ [F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (chromium-desktop) (443.8776ms)
+✔ [F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (chromium-desktop) (920.0878ms)
+✔ [F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (chromium-desktop) (1360.6873ms)
+✔ [F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (chromium-desktop) (724.5264ms)
+✔ [N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (chromium-desktop) (803.7263ms)
 [STAT] E-09 レイアウト(chromium-desktop) 幅=375 scrollWidth=375 最小の高さ=44
-✔ [N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (chromium-desktop) (1069.1197ms)
-[STAT] E-10 生成時間(chromium-desktop) 回数=100 平均ms=0.133 最大ms=1.900 クリックから表示ms=1.100 目安ms=100
-✔ [N-08] E-10 生成にかかる時間が目安の100ms以内 (chromium-desktop) (348.3595ms)
-✔ [追加] E-11 免責事項(自己責任であること)が画面に表示される (chromium-desktop) (441.5119ms)
-✔ [F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (webkit-iphone) (1090.1741ms)
-✔ [F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (webkit-iphone) (3561.9ms)
-✔ [F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (webkit-iphone) (588.7628ms)
-✔ [F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (webkit-iphone) (1084.9762ms)
-✔ [F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (webkit-iphone) (651.126ms)
-✔ [F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (webkit-iphone) (933.893ms)
-✔ [F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (webkit-iphone) (1387.4813ms)
-✔ [F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (webkit-iphone) (1551.5357ms)
-✔ [F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (webkit-iphone) (1299.2814ms)
-✔ [N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (webkit-iphone) (1178.811ms)
+✔ [N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (chromium-desktop) (703.6608ms)
+[STAT] E-10 生成時間(chromium-desktop) 回数=100 平均ms=0.199 最大ms=2.100 クリックから表示ms=2.100 目安ms=100
+✔ [N-08] E-10 生成にかかる時間が目安の100ms以内 (chromium-desktop) (416.2411ms)
+✔ [追加] E-11 免責事項(自己責任であること)が画面に表示される (chromium-desktop) (352.9735ms)
+✔ [F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (webkit-iphone) (1000.0205ms)
+✔ [F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (webkit-iphone) (3067.867ms)
+✔ [F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (webkit-iphone) (499.1444ms)
+✔ [F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (webkit-iphone) (737.2506ms)
+✔ [F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (webkit-iphone) (591.8907ms)
+✔ [F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (webkit-iphone) (832.4823ms)
+✔ [F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (webkit-iphone) (1317.242ms)
+✔ [F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (webkit-iphone) (1553.5638ms)
+✔ [F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (webkit-iphone) (1196.2416ms)
+✔ [N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (webkit-iphone) (1229.0988ms)
 [STAT] E-09 レイアウト(webkit-iphone) 幅=375 scrollWidth=375 最小の高さ=44
-✔ [N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (webkit-iphone) (629.465ms)
-[STAT] E-10 生成時間(webkit-iphone) 回数=100 平均ms=0.170 最大ms=2.000 クリックから表示ms=2.000 目安ms=100
-✔ [N-08] E-10 生成にかかる時間が目安の100ms以内 (webkit-iphone) (366.4913ms)
-✔ [追加] E-11 免責事項(自己責任であること)が画面に表示される (webkit-iphone) (384.9127ms)
+✔ [N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (webkit-iphone) (644.1634ms)
+[STAT] E-10 生成時間(webkit-iphone) 回数=100 平均ms=0.170 最大ms=1.000 クリックから表示ms=2.000 目安ms=100
+✔ [N-08] E-10 生成にかかる時間が目安の100ms以内 (webkit-iphone) (370.1357ms)
+✔ [追加] E-11 免責事項(自己責任であること)が画面に表示される (webkit-iphone) (487.7516ms)
 [STAT] E-07 リクエスト 合計=152 自サイト以外=0
 [STAT] E-07 pageerror=0
-✔ [N-04] E-07 全テスト中の外部通信が0件で、CSPのmetaが仕様どおり (449.1161ms)
+✔ [N-04] E-07 全テスト中の外部通信が0件で、CSPのmetaが仕様どおり (332.3578ms)
 ℹ tests 27
 ℹ suites 0
 ℹ pass 27
@@ -42,6 +42,6 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 25313.7008
+ℹ duration_ms 24343.2506
 
 終了コード: 0
