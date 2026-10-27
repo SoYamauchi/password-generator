@@ -1,0 +1,20 @@
+# 公開ページのテスト
+# 実行日時: 2026-10-27 16:25:12 JST
+# コマンド: node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=evidence\junit-published-e2e.xml tests/e2e/published.test.js
+
+﹣ [N-04][N-10] P-01 公開URL(HTTPS)でコンソールの警告・エラーが0件、自サイト以外へのリクエストが0件 (1.2708ms) # 公開URL(BASE_URL=https://...)が指定されていないため未実施
+﹣ [N-04] P-02 外部スクリプトを注入しても実行されず、CSP違反として検出される (0.2341ms) # 公開URL(BASE_URL=https://...)が指定されていないため未実施
+﹣ [F-06][F-07][F-09][F-10] P-03 スモークテスト(生成・再生成・コピー・設定の復元・伏せ字) (0.1401ms) # 公開URL(BASE_URL=https://...)が指定されていないため未実施
+﹣ [N-08] P-04 公開URLで幅375pxでも横スクロールが出ない (0.2497ms) # 公開URL(BASE_URL=https://...)が指定されていないため未実施
+﹣ [N-10] P-05 公開リポジトリの内容(gh api で取得)に秘密情報・個人情報が0件 (0.5591ms) # 公開URL(BASE_URL=https://...)が指定されていないため未実施
+﹣ [N-04] P-06 公開ページの記録したリクエストを保存する (0.1462ms) # 公開URL(BASE_URL=https://...)が指定されていないため未実施
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 6
+ℹ todo 0
+ℹ duration_ms 584.7004
+
+終了コード: 0

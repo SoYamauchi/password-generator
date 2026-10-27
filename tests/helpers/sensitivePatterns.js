@@ -20,7 +20,12 @@ const CREDENTIAL_PATTERNS = Object.freeze([
   { label: "パスワードの代入", regex: new RegExp(_join("pass", "wd\\s*[=:]"), "i") },
 ]);
 
+// ログに出た認証用の文字列を伏せるための正規表現
+const AUTH_STRING_REGEX = new RegExp(_join("\\bgh", "[pousr]_[A-Za-z0-9]{20,}|", "github", "_pat_[A-Za-z0-9_]+"), "g");
+
 const ALLOWED_EMAIL_DOMAINS = Object.freeze(["users.noreply.github.com", "example.com"]);
+// コミットの共同作成者の行に使う、公開の送信専用アドレス
+const ALLOWED_EMAIL_ADDRESSES = Object.freeze(["noreply@anthropic.com"]);
 const ALLOWED_IP_ADDRESSES = Object.freeze(["127.0.0.1", "0.0.0.0"]);
 const MAX_IPV4_OCTET = 255;
 const EMAIL_REGEX = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
@@ -54,6 +59,9 @@ function createLocalIdentityPatterns() {
 function _findEmails(text) {
   return (text.match(EMAIL_REGEX) || []).filter((email) => {
     const domain = email.split("@")[1].toLowerCase();
+    if (ALLOWED_EMAIL_ADDRESSES.includes(email.toLowerCase())) {
+      return false;
+    }
     return !ALLOWED_EMAIL_DOMAINS.some((allowed) => domain === allowed || domain.endsWith(`.${allowed}`));
   });
 }
@@ -115,6 +123,7 @@ function listRepositoryTextFiles(rootDirectory) {
 }
 
 module.exports = {
+  AUTH_STRING_REGEX,
   CREDENTIAL_PATTERNS,
   createLocalIdentityPatterns,
   findSensitiveMatches,

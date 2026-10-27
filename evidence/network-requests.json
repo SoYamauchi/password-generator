@@ -1,0 +1,871 @@
+{
+  "origin": "http://127.0.0.1:57023",
+  "total": 144,
+  "external": [],
+  "requests": [
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "webkit-iphone",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/",
+      "resourceType": "document"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/style.css",
+      "resourceType": "stylesheet"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/passwordGenerator.js",
+      "resourceType": "script"
+    },
+    {
+      "browser": "chromium-desktop",
+      "method": "GET",
+      "url": "http://127.0.0.1:57023/app.js",
+      "resourceType": "script"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+# 不良版1: 文字の選択を r % n(剰余だけ)に変えた版
+# 実行日時: 2026-10-27 16:24:35 JST
+# コマンド: PG_APP_DIR=.mutation-tmp/mutation-1 node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=.mutation-tmp\mutation-1\junit.xml tests/unit/randomness.test.js tests/integration/generation.test.js
+
+不良版の内容: 不良版1: 文字の選択を r % n(剰余だけ)に変えた版
+対象ファイル: passwordGenerator.js(.mutation-tmp/ の一時コピーだけを書き換え、元のファイルは変更しない)
+元のファイルの SHA-256(実行前): 9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7
+--- 変更前
+      if (value < limit) {
+        return value % n;
++++ 変更後
+      if (value >= 0) {
+        return value % n;
+検出の条件: n=94 などの小さい n では偏りが 2^-25 程度以下と小さく、10万件では検出できない。検出できる条件として (1) limit ちょうどの値を返すダミー乱数(U-13)、(2) n = 3×2^30 と大きい n を実際の crypto で10万回選ぶ区間の検定(I-04)を使う。
+失敗するはずのテスト: U-13, I-04
+
+===== テストの出力(不良版に対して実行。失敗するのが期待どおり) =====
+[STAT] I-01 制約違反 設定=既定(長さ24・全文字種) 件数=100000 違反={}
+[STAT] I-01 制約違反 設定=長さ8・除外ON・記号5種 件数=100000 違反={}
+[STAT] I-01 制約違反 設定=長さ32・英大文字と数字・除外ON 件数=100000 違反={}
+[STAT] I-02 文字種内の均等性 文字種=英大文字 統計量=21.978174 自由度=25 臨界値=52.619656 p値=0.63700408 有意水準=0.001 判定=合
+[STAT] I-02 文字種内の均等性 文字種=英小文字 統計量=24.532239 自由度=25 臨界値=52.619656 p値=0.4888177 有意水準=0.001 判定=合
+[STAT] I-02 文字種内の均等性 文字種=数字 統計量=8.2167289 自由度=9 臨界値=27.877165 p値=0.5124615 有意水準=0.001 判定=合
+[STAT] I-02 文字種内の均等性 文字種=記号 統計量=29.003179 自由度=31 臨界値=61.098306 p値=0.56906778 有意水準=0.001 判定=合
+[STAT] I-03 文字種の出現数 文字種=英大文字 観測=653397 期待=653191.49
+[STAT] I-03 文字種の出現数 文字種=英小文字 観測=652415 期待=653191.49
+[STAT] I-03 文字種の出現数 文字種=数字 観測=312704 期待=312765.96
+[STAT] I-03 文字種の出現数 文字種=記号 観測=781484 期待=780851.06
+[STAT] I-03 文字種の出現数の検定 統計量=1.513034 自由度=3 臨界値=16.266236 p値=0.67926537 有意水準=0.001 判定=合
+[STAT] I-04 大きいnの区間均等性 n=3221225472 観測=49979/24976/25045 統計量=12468.591 自由度=2 臨界値=13.815511 p値=0 有意水準=0.001 判定=否
+[STAT] I-05 位置の均等性 文字種=英大文字 統計量=18.607051 自由度=23 臨界値=49.728232 p値=0.7237811 有意水準=0.001 判定=合
+[STAT] I-05 位置の均等性 文字種=英小文字 統計量=24.596306 自由度=23 臨界値=49.728232 p値=0.37143001 有意水準=0.001 判定=合
+[STAT] I-05 位置の均等性 文字種=数字 統計量=18.195968 自由度=23 臨界値=49.728232 p値=0.74677447 有意水準=0.001 判定=合
+[STAT] I-05 位置の均等性 文字種=記号 統計量=28.746088 自由度=23 臨界値=49.728232 p値=0.18887606 有意水準=0.001 判定=合
+[STAT] I-06 重複件数 件数=100000 重複=0 注記=シードや時刻に依存していないことの目安であり、暗号論的な安全性の証明ではない
+✔ [F-01][F-02][F-03][F-04][F-05] I-01 既定と複数の設定で10万件生成し、長さ・文字・保証・除外が1件も破れない (3845.7223ms)
+✔ [N-02] I-02 文字の偏り: 同じ文字種の中の各文字の出現回数が均等(カイ二乗検定・有意水準0.1%) (83.5662ms)
+✔ [N-02] I-03 文字種ごとの出現数が期待値 1 + (L - k) × m / N と合う(カイ二乗検定・有意水準0.1%) (78.5987ms)
+✖ [N-02] I-04 モジュロバイアスの検出条件: n = 3×2^30 で添字を3区間に分けると均等(カイ二乗検定・有意水準0.1%) (291.6526ms)
+✔ [N-03] I-05 位置の偏り: 各文字種の文字が現れる位置が均等(位置ごとのカイ二乗検定・有意水準0.1%) (262.1255ms)
+✔ [N-01] I-06 重複なし: 長さ24・全文字種で10万件生成して重複が0件(暗号論的な安全性の証明ではない) (14.3527ms)
+✖ [N-02] U-13 棄却サンプリングの境界値(limit ちょうどは棄却、limit-1 は採用) (4.082ms)
+✔ [N-02] U-14 n が2のべき乗のときは棄却されない (2.6928ms)
+✖ [N-02] U-15 棄却が上限回数まで続いたら、無限に繰り返さずエラーになる (2.1567ms)
+✔ [N-03] U-16 シャッフルが Fisher–Yates(既知の乱数列で期待どおりの並び) (1.3054ms)
+✔ [N-03] U-17 シャッフル後も文字種の保証が維持される(既知の乱数列) (1.0952ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 8
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4957.2692
+
+✖ failing tests:
+
+test at tests\integration\generation.test.js:120:1
+✖ [N-02] I-04 モジュロバイアスの検出条件: n = 3×2^30 で添字を3区間に分けると均等(カイ二乗検定・有意水準0.1%) (291.6526ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result.isAccepted)
+  
+      at TestContext.<anonymous> (C:\Claude\password-generator\tests\integration\generation.test.js:134:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests\unit\randomness.test.js:17:1
+✖ [N-02] U-13 棄却サンプリングの境界値(limit ちょうどは棄却、limit-1 は採用) (4.082ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (C:\Claude\password-generator\tests\unit\randomness.test.js:23:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.start (node:internal/test_runner/test:1191:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\unit\randomness.test.js:46:1
+✖ [N-02] U-15 棄却が上限回数まで続いたら、無限に繰り返さずエラーになる (2.1567ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Claude\password-generator\tests\unit\randomness.test.js:51:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+
+===== 判定 =====
+失敗したテスト: I-04, U-13, U-15
+期待どおり失敗しなかったテスト: なし
+判定: 検出できた(期待どおり失敗)
+元のファイルの SHA-256(実行後): 9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7(実行前と一致)
+
+終了コード: 1

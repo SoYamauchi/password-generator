@@ -1,0 +1,153 @@
+# 不良版2: 乱数源を Math.random に変えた版
+# 実行日時: 2026-10-27 16:24:40 JST
+# コマンド: PG_APP_DIR=.mutation-tmp/mutation-2 node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=.mutation-tmp\mutation-2\junit.xml tests/security/staticChecks.test.js tests/integration/randomSource.test.js
+
+不良版の内容: 不良版2: 乱数源を Math.random に変えた版
+対象ファイル: passwordGenerator.js(.mutation-tmp/ の一時コピーだけを書き換え、元のファイルは変更しない)
+元のファイルの SHA-256(実行前): 9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7
+--- 変更前
+      randomSource(buffer);
+      const value = buffer[0];
++++ 変更後
+      const value = Math.floor(Math.random() * UINT32_RANGE);
+検出の条件: N-01 の静的検査(S-01)と、乱数源の差し替えのテスト(I-07・I-08)が失敗することを確認する。
+失敗するはずのテスト: S-01, I-07, I-08
+
+===== テストの出力(不良版に対して実行。失敗するのが期待どおり) =====
+[STAT] I-10 生成時間(Node) 回数=1000 平均ms=0.0248771 最大ms=1.0984 目安ms=100
+✖ [N-01] I-07 乱数源の差し替え: 同じ有限の値の列からは同じパスワードになり、出力が列だけで決まる (8.474ms)
+✖ [N-01] I-08 Math.random を例外を投げるダミーにしても、生成が成功する (4.796ms)
+✔ [N-01][N-09] I-09 crypto.getRandomValues が使えないと、別の乱数に切り替わらずエラーになり、生成されない (1.3582ms)
+✔ [N-08] I-10 生成時間の計測(Node、既定の設定) (31.3358ms)
+[SCAN] passwordGenerator.js / Math.random: 1 件
+[SCAN] passwordGenerator.js / Date.now: 0 件
+[SCAN] passwordGenerator.js / new Date(: 0 件
+[SCAN] passwordGenerator.js / performance.now: 0 件
+[SCAN] passwordGenerator.js / seed(固定シード): 0 件
+[SCAN] passwordGenerator.js / xorshift 等の擬似乱数: 0 件
+[SCAN] app.js / Math.random: 0 件
+[SCAN] app.js / Date.now: 0 件
+[SCAN] app.js / new Date(: 0 件
+[SCAN] app.js / performance.now: 0 件
+[SCAN] app.js / seed(固定シード): 0 件
+[SCAN] app.js / xorshift 等の擬似乱数: 0 件
+[SCAN] index.html / Math.random: 0 件
+[SCAN] index.html / Date.now: 0 件
+[SCAN] index.html / new Date(: 0 件
+[SCAN] index.html / performance.now: 0 件
+[SCAN] index.html / seed(固定シード): 0 件
+[SCAN] index.html / xorshift 等の擬似乱数: 0 件
+[SCAN] passwordGenerator.js / innerHTML: 0 件
+[SCAN] passwordGenerator.js / outerHTML: 0 件
+[SCAN] passwordGenerator.js / insertAdjacentHTML: 0 件
+[SCAN] passwordGenerator.js / eval: 0 件
+[SCAN] passwordGenerator.js / new Function: 0 件
+[SCAN] passwordGenerator.js / document.write: 0 件
+[SCAN] passwordGenerator.js / setTimeout/setInterval に文字列: 0 件
+[SCAN] app.js / innerHTML: 0 件
+[SCAN] app.js / outerHTML: 0 件
+[SCAN] app.js / insertAdjacentHTML: 0 件
+[SCAN] app.js / eval: 0 件
+[SCAN] app.js / new Function: 0 件
+[SCAN] app.js / document.write: 0 件
+[SCAN] app.js / setTimeout/setInterval に文字列: 0 件
+[SCAN] index.html / innerHTML: 0 件
+[SCAN] index.html / outerHTML: 0 件
+[SCAN] index.html / insertAdjacentHTML: 0 件
+[SCAN] index.html / eval: 0 件
+[SCAN] index.html / new Function: 0 件
+[SCAN] index.html / document.write: 0 件
+[SCAN] index.html / setTimeout/setInterval に文字列: 0 件
+[SCAN] index.html / CSP: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'
+[SCAN] index.html / script タグ: 2 件(インライン 0 件)
+[SCAN] index.html / イベント属性: 0 件、style 属性: 0 件
+[SCAN] index.html / 外部URL(http://, https://, //): 0 件
+[SCAN] passwordGenerator.js / 外部URL: 0 件
+[SCAN] passwordGenerator.js / @import: 0 件
+[SCAN] passwordGenerator.js / 通信API: 0 件
+[SCAN] app.js / 外部URL: 0 件
+[SCAN] app.js / @import: 0 件
+[SCAN] app.js / 通信API: 0 件
+[SCAN] style.css / 外部URL: 0 件
+[SCAN] style.css / @import: 0 件
+[SCAN] style.css / 通信API: 0 件
+[SCAN] 秘密情報の検査: ファイル 40 件、パターン 8 種、検出 0 件
+[SCAN] 個人情報の検査: ファイル 40 件、検出 0 件
+[SCAN] ESLint 終了コード: 0
+✖ [N-01] S-01 アプリ本体に Math.random・Date.now・performance.now・シード等がなく、乱数は getRandomValues だけ (19.5326ms)
+✔ [N-09] S-02 アプリ本体に innerHTML・outerHTML・insertAdjacentHTML・eval・new Function・document.write がない (3.7547ms)
+✔ [N-04] S-03 index.html に仕様どおりのCSPがあり、インラインスクリプト・イベント属性・外部URLがない (5.8938ms)
+✔ [N-04] S-04 アプリ本体のJS・CSSに外部URLと通信APIがない (2.9571ms)
+✔ [N-04][N-10] S-05 リポジトリ内に秘密情報らしい文字列がない (22.6464ms)
+✔ [N-10] S-06 リポジトリ内に個人情報(ホームのパス・PC名・ユーザー名・メール・IPアドレス)がない (31.9452ms)
+✔ [静的解析] S-07 ESLint の警告・エラーが0件 (1461.6092ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 8
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1908.0079
+
+✖ failing tests:
+
+test at tests\integration\randomSource.test.js:39:1
+✖ [N-01] I-07 乱数源の差し替え: 同じ有限の値の列からは同じパスワードになり、出力が列だけで決まる (8.474ms)
+  AssertionError [ERR_ASSERTION]: 同じ列からは同じパスワード
+  + actual - expected
+  
+  + 'J7lWB6ote]3W=uJ4W50j]\\69'
+  - 'W(FBud.4EU8$=5D=%n3Bi_EA'
+  
+      at TestContext.<anonymous> (C:\Claude\password-generator\tests\integration\randomSource.test.js:48:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.start (node:internal/test_runner/test:1191:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'J7lWB6ote]3W=uJ4W50j]\\69',
+    expected: 'W(FBud.4EU8$=5D=%n3Bi_EA',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\integration\randomSource.test.js:53:1
+✖ [N-01] I-08 Math.random を例外を投げるダミーにしても、生成が成功する (4.796ms)
+  Error: Math.random must not be used
+      at Math.<anonymous> (C:\Claude\password-generator\tests\integration\randomSource.test.js:35:11)
+      at getRandomIndex (C:\Claude\password-generator\.mutation-tmp\mutation-2\passwordGenerator.js:235:37)
+      at _pickCharacter (C:\Claude\password-generator\.mutation-tmp\mutation-2\passwordGenerator.js:259:17)
+      at C:\Claude\password-generator\.mutation-tmp\mutation-2\passwordGenerator.js:275:46
+      at Array.map (<anonymous>)
+      at composePassword (C:\Claude\password-generator\.mutation-tmp\mutation-2\passwordGenerator.js:275:31)
+      at Object.generatePassword (C:\Claude\password-generator\.mutation-tmp\mutation-2\passwordGenerator.js:292:12)
+      at C:\Claude\password-generator\tests\integration\randomSource.test.js:56:15
+      at _withReplacedGlobal (C:\Claude\password-generator\tests\integration\randomSource.test.js:27:12)
+      at TestContext.<anonymous> (C:\Claude\password-generator\tests\integration\randomSource.test.js:55:20)
+
+test at tests\security\staticChecks.test.js:38:1
+✖ [N-01] S-01 アプリ本体に Math.random・Date.now・performance.now・シード等がなく、乱数は getRandomValues だけ (19.5326ms)
+  AssertionError [ERR_ASSERTION]: {"passwordGenerator.js: Math.random":1,"passwordGenerator.js: Date.now":0,"passwordGenerator.js: new Date(":0,"passwordGenerator.js: performance.now":0,"passwordGenerator.js: seed(固定シード)":0,"passwordGenerator.js: xorshift 等の擬似乱数":0,"app.js: Math.random":0,"app.js: Date.now":0,"app.js: new Date(":0,"app.js: performance.now":0,"app.js: seed(固定シード)":0,"app.js: xorshift 等の擬似乱数":0,"index.html: Math.random":0,"index.html: Date.now":0,"index.html: new Date(":0,"index.html: performance.now":0,"index.html: seed(固定シード)":0,"index.html: xorshift 等の擬似乱数":0}
+      at TestContext.<anonymous> (C:\Claude\password-generator\tests\security\staticChecks.test.js:48:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.start (node:internal/test_runner/test:1191:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+
+===== 判定 =====
+失敗したテスト: I-07, I-08, S-01
+期待どおり失敗しなかったテスト: なし
+判定: 検出できた(期待どおり失敗)
+元のファイルの SHA-256(実行後): 9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7(実行前と一致)
+
+終了コード: 1

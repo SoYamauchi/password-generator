@@ -1,0 +1,77 @@
+# セキュリティ確認
+# 実行日時: 2026-10-27 16:24:54 JST
+# コマンド: node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=evidence\junit-security.xml tests/security/**/*.test.js
+
+[SCAN] passwordGenerator.js / Math.random: 0 件
+[SCAN] passwordGenerator.js / Date.now: 0 件
+[SCAN] passwordGenerator.js / new Date(: 0 件
+[SCAN] passwordGenerator.js / performance.now: 0 件
+[SCAN] passwordGenerator.js / seed(固定シード): 0 件
+[SCAN] passwordGenerator.js / xorshift 等の擬似乱数: 0 件
+[SCAN] app.js / Math.random: 0 件
+[SCAN] app.js / Date.now: 0 件
+[SCAN] app.js / new Date(: 0 件
+[SCAN] app.js / performance.now: 0 件
+[SCAN] app.js / seed(固定シード): 0 件
+[SCAN] app.js / xorshift 等の擬似乱数: 0 件
+[SCAN] index.html / Math.random: 0 件
+[SCAN] index.html / Date.now: 0 件
+[SCAN] index.html / new Date(: 0 件
+[SCAN] index.html / performance.now: 0 件
+[SCAN] index.html / seed(固定シード): 0 件
+[SCAN] index.html / xorshift 等の擬似乱数: 0 件
+[SCAN] passwordGenerator.js / getRandomValues( の呼び出し: 1 件
+[SCAN] passwordGenerator.js / innerHTML: 0 件
+[SCAN] passwordGenerator.js / outerHTML: 0 件
+[SCAN] passwordGenerator.js / insertAdjacentHTML: 0 件
+[SCAN] passwordGenerator.js / eval: 0 件
+[SCAN] passwordGenerator.js / new Function: 0 件
+[SCAN] passwordGenerator.js / document.write: 0 件
+[SCAN] passwordGenerator.js / setTimeout/setInterval に文字列: 0 件
+[SCAN] app.js / innerHTML: 0 件
+[SCAN] app.js / outerHTML: 0 件
+[SCAN] app.js / insertAdjacentHTML: 0 件
+[SCAN] app.js / eval: 0 件
+[SCAN] app.js / new Function: 0 件
+[SCAN] app.js / document.write: 0 件
+[SCAN] app.js / setTimeout/setInterval に文字列: 0 件
+[SCAN] index.html / innerHTML: 0 件
+[SCAN] index.html / outerHTML: 0 件
+[SCAN] index.html / insertAdjacentHTML: 0 件
+[SCAN] index.html / eval: 0 件
+[SCAN] index.html / new Function: 0 件
+[SCAN] index.html / document.write: 0 件
+[SCAN] index.html / setTimeout/setInterval に文字列: 0 件
+[SCAN] index.html / CSP: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'
+[SCAN] index.html / script タグ: 2 件(インライン 0 件)
+[SCAN] index.html / イベント属性: 0 件、style 属性: 0 件
+[SCAN] index.html / 外部URL(http://, https://, //): 0 件
+[SCAN] passwordGenerator.js / 外部URL: 0 件
+[SCAN] passwordGenerator.js / @import: 0 件
+[SCAN] passwordGenerator.js / 通信API: 0 件
+[SCAN] app.js / 外部URL: 0 件
+[SCAN] app.js / @import: 0 件
+[SCAN] app.js / 通信API: 0 件
+[SCAN] style.css / 外部URL: 0 件
+[SCAN] style.css / @import: 0 件
+[SCAN] style.css / 通信API: 0 件
+[SCAN] 秘密情報の検査: ファイル 47 件、パターン 8 種、検出 0 件
+[SCAN] 個人情報の検査: ファイル 47 件、検出 0 件
+[SCAN] ESLint 終了コード: 0
+✔ [N-01] S-01 アプリ本体に Math.random・Date.now・performance.now・シード等がなく、乱数は getRandomValues だけ (11.3928ms)
+✔ [N-09] S-02 アプリ本体に innerHTML・outerHTML・insertAdjacentHTML・eval・new Function・document.write がない (2.695ms)
+✔ [N-04] S-03 index.html に仕様どおりのCSPがあり、インラインスクリプト・イベント属性・外部URLがない (5.4484ms)
+✔ [N-04] S-04 アプリ本体のJS・CSSに外部URLと通信APIがない (1.5566ms)
+✔ [N-04][N-10] S-05 リポジトリ内に秘密情報らしい文字列がない (25.1789ms)
+✔ [N-10] S-06 リポジトリ内に個人情報(ホームのパス・PC名・ユーザー名・メール・IPアドレス)がない (38.0187ms)
+✔ [静的解析] S-07 ESLint の警告・エラーが0件 (1325.0191ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1571.0209
+
+終了コード: 0
