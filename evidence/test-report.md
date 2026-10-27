@@ -1,12 +1,12 @@
 # テスト結果レポート
 
-- 実行日時: 2026-10-27 16:31:02 JST
+- 実行日時: 2026-10-27 16:51:30 JST
 - 環境: Windows_NT 10.0.26300、Node v24.18.0、chromium 156.0.8078.4・webkit 27.2(詳細は evidence/environment.txt)
-- テストケースの件数: 合格 71・不合格 0・未実施 0(合計 71。JUnit から集計)
-- テスト観点(下表の行)の件数: 合 34・否 0・未実施 0(合計 34)
+- テストケースの件数: 合格 67・不合格 0・未実施 6(合計 73。JUnit から集計)
+- テスト観点(下表の行)の件数: 合 31・否 0・未実施 4(合計 35)
 - このファイルは scripts/runEvidence.js が JUnit とログから機械的に生成したもので、手で書き換えていない。
 
-## テスト観点と結果(要件定義書 7-2 の全行)
+## テスト観点と結果(要件定義書 7-2 の全行と、追加の観点)
 
 | 要件ID | テスト観点 | テストID(テスト名) | 結果(合/否/未実施) | 確認日 | エビデンス(ファイルと該当行) | 備考 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -30,27 +30,28 @@
 | N-04 | [セキュリティ] CSP の meta(script-src 自サイト・connect-src 'none')、インラインスクリプト・イベント属性・外部URLなし | [N-04] S-03 index.html に仕様どおりのCSPがあり、インラインスクリプト・イベント属性・外部URLがない<br>[N-04] S-04 アプリ本体のJS・CSSに外部URLと通信APIがない | 合 | 2026-10-27 | evidence/security.log:63, evidence/security.log:64 |  |
 | N-04, N-10 | [セキュリティ] リポジトリ内に秘密情報らしい文字列がない(個人情報も検査) | [N-04][N-10] S-05 リポジトリ内に秘密情報らしい文字列がない<br>[N-10] S-06 リポジトリ内に個人情報(ホームのパス・PC名・ユーザー名・メール・IPアドレス)がない | 合 | 2026-10-27 | evidence/security.log:65, evidence/security.log:66 |  |
 | 静的解析 | [セキュリティ] ESLint の警告・エラーが0件 | [静的解析] S-07 ESLint の警告・エラーが0件 | 合 | 2026-10-27 | evidence/security.log:67 |  |
-| F-06 | [ブラウザ] 開いた直後に1件生成、設定変更では変わらず、再生成で変わる | [F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (chromium-desktop)<br>[F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:5, evidence/e2e.log:19 |  |
-| F-01, F-05, N-09 | [ブラウザ] 入力エラー(7・129・abc・1.5・空欄、記号欄の英字・全角・絵文字・script)で再生成せず、スクリプトが実行・挿入されない | [F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (chromium-desktop)<br>[F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:6, evidence/e2e.log:20 |  |
-| F-07, N-07 | [ブラウザ] コピーで内容が一致し「コピーしました」、writeText 失敗で失敗表示・選択状態 | [F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (chromium-desktop)<br>[F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (chromium-desktop)<br>[F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (chromium-desktop)<br>[F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (webkit-iphone)<br>[F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (webkit-iphone)<br>[F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:7, evidence/e2e.log:8, evidence/e2e.log:9, evidence/e2e.log:21, evidence/e2e.log:22, evidence/e2e.log:23 |  |
-| F-08, N-06 | [ブラウザ] 強度表示が既定で約157 bit・非常に強い、再生成時だけ更新、「概算」を表示 | [F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (chromium-desktop)<br>[F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:10, evidence/e2e.log:24 |  |
-| F-09, N-05, N-09 | [ブラウザ] 設定の復元、保存領域・Cookie・URLにパスワードなし、不正な保存値でも初期値で起動 | [F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (chromium-desktop)<br>[F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (chromium-desktop)<br>[F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (webkit-iphone)<br>[F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:11, evidence/e2e.log:12, evidence/e2e.log:25, evidence/e2e.log:26 |  |
-| F-10 | [ブラウザ] 伏せ字の表示、コピーは実際の値、切り替えでパスワードは変わらない | [F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (chromium-desktop)<br>[F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:13, evidence/e2e.log:27 |  |
-| N-04 | [ブラウザ] 全リクエストのうち自サイト以外が0件、CSP の meta が仕様どおり | [N-04] E-07 全テスト中の外部通信が0件で、CSPのmetaが仕様どおり | 合 | 2026-10-27 | evidence/e2e.log:35 |  |
-| N-01, N-09 | [ブラウザ] getRandomValues を削除するとエラーで表示しない、Math.random が例外でも生成成功 | [N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (chromium-desktop)<br>[N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:14, evidence/e2e.log:28 |  |
-| N-08 | [ブラウザ] 幅375pxで横スクロールなし、ボタン高さ44px以上、スクリーンショット | [N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (chromium-desktop)<br>[N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:16, evidence/e2e.log:30 |  |
-| N-08 | [ブラウザ] 生成時間が目安の100ms以内(計測値をログに出す) | [N-08] I-10 生成時間の計測(Node、既定の設定)<br>[N-08] E-10 生成にかかる時間が目安の100ms以内 (chromium-desktop)<br>[N-08] E-10 生成にかかる時間が目安の100ms以内 (webkit-iphone) | 合 | 2026-10-27 | evidence/integration.log:33, evidence/e2e.log:18, evidence/e2e.log:32 |  |
-| N-04, N-10 | [公開ページ] 公開URL(HTTPS)でコンソールの警告・エラー0件、自サイト以外へのリクエスト0件、外部スクリプト注入がCSPで阻止される | [N-04][N-10] P-01 公開URL(HTTPS)でコンソールの警告・エラーが0件、自サイト以外へのリクエストが0件<br>[N-04] P-02 外部スクリプトを注入しても実行されず、CSP違反として検出される<br>[N-04] P-06 公開ページの記録したリクエストを保存する | 合 | 2026-10-27 | evidence/published-e2e.log:7, evidence/published-e2e.log:9, evidence/published-e2e.log:17 |  |
-| F-06, F-07, F-09, F-10 | [公開ページ] スモークテスト(生成・再生成・コピー一致・設定の復元・伏せ字) | [F-06][F-07][F-09][F-10] P-03 スモークテスト(生成・再生成・コピー・設定の復元・伏せ字) | 合 | 2026-10-27 | evidence/published-e2e.log:10 |  |
-| N-08 | [公開ページ] 公開URLで幅375pxでも横スクロールなし、スクリーンショット | [N-08] P-04 公開URLで幅375pxでも横スクロールが出ない | 合 | 2026-10-27 | evidence/published-e2e.log:15 |  |
-| N-10 | [公開ページ] 公開リポジトリの内容(gh api)に秘密情報・個人情報が0件 | [N-10] P-05 公開リポジトリの内容(gh api で取得)に秘密情報・個人情報が0件 | 合 | 2026-10-27 | evidence/published-e2e.log:16 |  |
+| F-06 | [ブラウザ] 開いた直後に1件生成、設定変更では変わらず、再生成で変わる | [F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (chromium-desktop)<br>[F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:5, evidence/e2e.log:20 |  |
+| F-01, F-05, N-09 | [ブラウザ] 入力エラー(7・129・abc・1.5・空欄、記号欄の英字・全角・絵文字・script)で再生成せず、スクリプトが実行・挿入されない | [F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (chromium-desktop)<br>[F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:6, evidence/e2e.log:21 |  |
+| F-07, N-07 | [ブラウザ] コピーで内容が一致し「コピーしました」、writeText 失敗で失敗表示・選択状態 | [F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (chromium-desktop)<br>[F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (chromium-desktop)<br>[F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (chromium-desktop)<br>[F-07][N-07] E-03a コピー成功で内容が一致し「コピーしました」が出る (webkit-iphone)<br>[F-07][N-07] E-03b writeText の失敗時は失敗を表示し、文字列を選択し、再試行しない (webkit-iphone)<br>[F-07][N-07] E-03c クリップボードAPIがない環境では失敗を表示する (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:7, evidence/e2e.log:8, evidence/e2e.log:9, evidence/e2e.log:22, evidence/e2e.log:23, evidence/e2e.log:24 |  |
+| F-08, N-06 | [ブラウザ] 強度表示が既定で約157 bit・非常に強い、再生成時だけ更新、「概算」を表示 | [F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (chromium-desktop)<br>[F-08][N-06] E-04 強度表示は約157 bit・非常に強いで、再生成時だけ更新される (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:10, evidence/e2e.log:25 |  |
+| F-09, N-05, N-09 | [ブラウザ] 設定の復元、保存領域・Cookie・URLにパスワードなし、不正な保存値でも初期値で起動 | [F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (chromium-desktop)<br>[F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (chromium-desktop)<br>[F-09][N-05] E-05a 設定が復元され、保存領域・Cookie・URLにパスワードが含まれない (webkit-iphone)<br>[F-09][N-09] E-05b 不正な保存値でもエラーなく初期値で起動する (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:11, evidence/e2e.log:12, evidence/e2e.log:26, evidence/e2e.log:27 |  |
+| F-10 | [ブラウザ] 伏せ字の表示、コピーは実際の値、切り替えでパスワードは変わらない | [F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (chromium-desktop)<br>[F-10] E-06 伏せ字に切り替えても、コピーは実際のパスワードで、パスワードは変わらない (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:13, evidence/e2e.log:28 |  |
+| N-04 | [ブラウザ] 全リクエストのうち自サイト以外が0件、CSP の meta が仕様どおり | [N-04] E-07 全テスト中の外部通信が0件で、CSPのmetaが仕様どおり | 合 | 2026-10-27 | evidence/e2e.log:37 |  |
+| N-01, N-09 | [ブラウザ] getRandomValues を削除するとエラーで表示しない、Math.random が例外でも生成成功 | [N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (chromium-desktop)<br>[N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:14, evidence/e2e.log:29 |  |
+| N-08 | [ブラウザ] 幅375pxで横スクロールなし、ボタン高さ44px以上、スクリーンショット | [N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (chromium-desktop)<br>[N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上 (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:16, evidence/e2e.log:31 |  |
+| N-08 | [ブラウザ] 生成時間が目安の100ms以内(計測値をログに出す) | [N-08] I-10 生成時間の計測(Node、既定の設定)<br>[N-08] E-10 生成にかかる時間が目安の100ms以内 (chromium-desktop)<br>[N-08] E-10 生成にかかる時間が目安の100ms以内 (webkit-iphone) | 合 | 2026-10-27 | evidence/integration.log:33, evidence/e2e.log:18, evidence/e2e.log:33 |  |
+| N-04, N-10 | [公開ページ] 公開URL(HTTPS)でコンソールの警告・エラー0件、自サイト以外へのリクエスト0件、外部スクリプト注入がCSPで阻止される | [N-04][N-10] P-01 公開URL(HTTPS)でコンソールの警告・エラーが0件、自サイト以外へのリクエストが0件<br>[N-04] P-02 外部スクリプトを注入しても実行されず、CSP違反として検出される<br>[N-04] P-06 公開ページの記録したリクエストを保存する | 未実施 | 2026-10-27 | evidence/published-e2e.log:5, evidence/published-e2e.log:6, evidence/published-e2e.log:10 | 理由: 公開URL(BASE_URL=https://...)が指定されていないため未実施。代わりの確認手順: README の「手動確認」を参照 |
+| F-06, F-07, F-09, F-10 | [公開ページ] スモークテスト(生成・再生成・コピー一致・設定の復元・伏せ字) | [F-06][F-07][F-09][F-10] P-03 スモークテスト(生成・再生成・コピー・設定の復元・伏せ字) | 未実施 | 2026-10-27 | evidence/published-e2e.log:7 | 理由: 公開URL(BASE_URL=https://...)が指定されていないため未実施。代わりの確認手順: README の「手動確認」を参照 |
+| N-08 | [公開ページ] 公開URLで幅375pxでも横スクロールなし、スクリーンショット | [N-08] P-04 公開URLで幅375pxでも横スクロールが出ない | 未実施 | 2026-10-27 | evidence/published-e2e.log:8 | 理由: 公開URL(BASE_URL=https://...)が指定されていないため未実施。代わりの確認手順: README の「手動確認」を参照 |
+| N-10 | [公開ページ] 公開リポジトリの内容(gh api)に秘密情報・個人情報が0件 | [N-10] P-05 公開リポジトリの内容(gh api で取得)に秘密情報・個人情報が0件 | 未実施 | 2026-10-27 | evidence/published-e2e.log:9 | 理由: 公開URL(BASE_URL=https://...)が指定されていないため未実施。代わりの確認手順: README の「手動確認」を参照 |
+| 追加(免責事項) | [ブラウザ] 免責事項(生成したパスワードの利用は自己責任)が画面に表示される | [追加] E-11 免責事項(自己責任であること)が画面に表示される (chromium-desktop)<br>[追加] E-11 免責事項(自己責任であること)が画面に表示される (webkit-iphone) | 合 | 2026-10-27 | evidence/e2e.log:19, evidence/e2e.log:34 |  |
 
-照合: 7-2 の観点 34 行がすべて表にある(requirementMatrix.js の全行を出力)。
+照合: 7-2 の観点 34 行がすべて表にある(追加の観点 1 行を含め、requirementMatrix.js の全行を出力)。
 
 ## 静的解析とカバレッジ
 
 - ESLint: 終了コード 0(警告・エラー0件)(evidence/eslint.log)
-- カバレッジ: passwordGenerator.js の行カバレッジ 99.06%、分岐 98.10%、関数 100.00%(evidence/coverage.txt)
+- カバレッジ: passwordGenerator.js の行カバレッジ 98.58%、分岐 97.17%、関数 100.00%(evidence/coverage.txt)
 - 統計値: evidence/statistics.log、リクエスト一覧: evidence/network-requests.json
 - スクリーンショット: evidence/screenshots/(写っているパスワードはテスト用の使い捨ての値)
 
@@ -66,7 +67,7 @@
 
 - 公開URL: https://soyamauchi.github.io/password-generator/
 - リポジトリ: https://github.com/SoYamauchi/password-generator
-- 確認日時: 2026-10-27 16:30:54 JST
+- 確認日時: 2026-10-27 16:34:06 JST
 - curl -sI: HTTP 200、HTTPS はい → 合(evidence/publish-log.txt)
 
 | ファイル | ローカルの SHA-256 | 公開ページの SHA-256 | 一致 |

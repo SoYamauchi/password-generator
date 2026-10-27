@@ -313,6 +313,16 @@ async function scenarioTiming(profile) {
   });
 }
 
+async function scenarioDisclaimer(profile) {
+  await withApp(profile, { contextOptions: { viewport: MOBILE_VIEWPORT } }, async (page) => {
+    const disclaimer = await getText(page, "#disclaimer");
+    assert.ok(disclaimer.includes("免責事項"), "見出しがある");
+    assert.ok(disclaimer.includes("ご自身の責任"), "自己責任であることを書いている");
+    assert.ok(disclaimer.includes("漏洩"), "漏洩についても書いている");
+    assert.equal(await page.isVisible("#disclaimer"), true, "画面に表示されている");
+  });
+}
+
 const SCENARIOS = Object.freeze([
   { title: "[F-06] E-01 開いた直後に1件生成され、設定を変えても変わらず、再生成で変わる", run: scenarioInitialGeneration },
   { title: "[F-01][F-05][N-09] E-02 入力エラーで再生成せず、記号欄のHTML/スクリプトが実行・挿入されない", run: scenarioInputErrors },
@@ -326,6 +336,7 @@ const SCENARIOS = Object.freeze([
   { title: "[N-01][N-09] E-08 乱数が使えないとエラーで生成せず、Math.random が使えなくても生成できる", run: scenarioRandomUnavailable },
   { title: "[N-08] E-09 幅375pxで横スクロールが出ず、ボタンの高さが44px以上", run: scenarioLayout },
   { title: "[N-08] E-10 生成にかかる時間が目安の100ms以内", run: scenarioTiming },
+  { title: "[追加] E-11 免責事項(自己責任であること)が画面に表示される", run: scenarioDisclaimer },
 ]);
 
 for (const profile of BROWSER_PROFILES) {

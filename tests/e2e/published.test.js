@@ -115,6 +115,7 @@ test("[N-04] P-02 外部スクリプトを注入しても実行されず、CSP�
 async function _assertSmokeGeneration(page) {
   const first = await getPassword(page);
   assert.equal(first.length, DEFAULT_LENGTH, "開くと1件生成される");
+  assert.ok((await getText(page, "#disclaimer")).includes("ご自身の責任"), "免責事項が表示される");
   await page.click(SELECTORS.regenerateButton);
   const second = await getPassword(page);
   assert.notEqual(second, first, "再生成で変わる");

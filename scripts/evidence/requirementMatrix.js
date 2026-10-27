@@ -209,6 +209,13 @@ const REQUIREMENT_MATRIX = Object.freeze([
     viewpoint: "公開リポジトリの内容(gh api)に秘密情報・個人情報が0件",
     tests: ["P-05"],
   },
+  {
+    layer: "e2e",
+    ids: "追加(免責事項)",
+    viewpoint: "免責事項(生成したパスワードの利用は自己責任)が画面に表示される",
+    tests: ["E-11"],
+    isExtra: true,
+  },
 ]);
 
 const LAYER_LABELS = Object.freeze({

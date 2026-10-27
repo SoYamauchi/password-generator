@@ -130,11 +130,12 @@ function buildReport(data) {
   const summary = { rowCounts, testCounts, rowTotal: rows.length };
   const text = [
     ..._formatHeader(data, summary),
-    "## テスト観点と結果(要件定義書 7-2 の全行)",
+    "## テスト観点と結果(要件定義書 7-2 の全行と、追加の観点)",
     "",
     ..._formatMatrix(rows, data.checkedDate),
     "",
-    `照合: 7-2 の観点 ${REQUIREMENT_MATRIX.length} 行がすべて表にある(requirementMatrix.js の全行を出力)。`,
+    `照合: 7-2 の観点 ${REQUIREMENT_MATRIX.filter((row) => !row.isExtra).length} 行がすべて表にある`
+      + `(追加の観点 ${REQUIREMENT_MATRIX.filter((row) => row.isExtra).length} 行を含め、requirementMatrix.js の全行を出力)。`,
     "",
     ...data.extraSections,
     "## 不良版でテストが失敗することの確認(7-3)",

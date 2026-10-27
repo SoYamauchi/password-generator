@@ -212,6 +212,21 @@ fieldset.types legend {
   font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
 }
 
+.disclaimer {
+  margin: 8px 0 16px;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.disclaimer h2 {
+  font-size: 0.875rem;
+  margin: 0 0 4px;
+}
+
+.disclaimer p {
+  margin: 0;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
