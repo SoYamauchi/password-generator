@@ -25,6 +25,8 @@ const GH_MAX_BUFFER = 64 * 1024 * 1024;
 const [CHROMIUM_PROFILE, WEBKIT_PROFILE] = BROWSER_PROFILES;
 
 const browsers = new Map();
+// P-02 で意図的に注入したリクエスト(CSP で阻止されることの確認用)。P-06 では別に記録する
+const intentionalInjections = [];
 
 before(async () => {
   if (SKIP_REASON) {
@@ -90,6 +92,7 @@ const VIOLATION_RECORDER_SCRIPT = `
 `;
 
 test("[N-04] P-02 外部スクリプトを注入しても実行されず、CSP違反として検出される", { skip: SKIP_REASON }, async () => {
+  const requestStartIndex = records.requests.length;
   await withPublishedApp(CHROMIUM_PROFILE, { initScripts: [VIOLATION_RECORDER_SCRIPT] }, async (page) => {
     let injectionError = null;
     try {
@@ -105,6 +108,8 @@ test("[N-04] P-02 外部スクリプトを注入しても実行されず、CSP�
     assert.ok(violations.some((violation) => violation.blockedURI.startsWith("https://example.com")
       && violation.directive.startsWith("script-src")), "script-src の違反として検出される");
   });
+  intentionalInjections.push(...records.requests.slice(requestStartIndex)
+    .filter((request) => request.url === INJECTED_SCRIPT_URL));
 });
 
 async function _assertSmokeGeneration(page) {
@@ -176,10 +181,12 @@ test("[N-10] P-05 公開リポジトリの内容(gh api で取得)に秘密情�
 
 test("[N-04] P-06 公開ページの記録したリクエストを保存する", { skip: SKIP_REASON }, () => {
   const origin = new URL(BASE_URL).origin;
-  const external = records.requests.filter((request) => new URL(request.url).origin !== origin);
+  const external = records.requests.filter((request) => new URL(request.url).origin !== origin
+    && !intentionalInjections.includes(request));
   writeEvidenceJson("published-network-requests.json", {
-    origin, total: records.requests.length, external, requests: records.requests,
+    origin, total: records.requests.length, external, intentionalInjections, requests: records.requests,
   });
-  console.log(`[STAT] P-06 公開ページのリクエスト 合計=${records.requests.length} 自サイト以外=${external.length}`);
+  console.log(`[STAT] P-06 公開ページのリクエスト 合計=${records.requests.length} 自サイト以外=${external.length}`
+    + ` P-02で意図的に注入(CSPで阻止)=${intentionalInjections.length}`);
   assert.deepEqual(external, []);
 });

@@ -1,0 +1,114 @@
+
+========== 公開(2026-10-27 16:26:35 JST) ==========
+# 公開前の確認を開始する
+
+$ gh auth status
+github.com
+  ✓ Logged in to github.com account SoYamauchi (keyring)
+  - Active account: true
+  - Git operations protocol: https
+  - (認証情報の行は伏せた)
+  - 付与されているスコープ: 'gist', 'read:org', 'repo', 'workflow'
+(終了コード: 0)
+
+# 確認: unit のテスト 合格 22 件・不合格 0 件
+
+# 確認: integration のテスト 合格 11 件・不合格 0 件
+
+# 確認: security のテスト 合格 7 件・不合格 0 件
+
+# 確認: e2e のテスト 合格 25 件・不合格 0 件
+
+# 確認: 秘密情報の検査(作業ツリー 56 ファイルと git 履歴) 検出 0 件
+
+# 確認: 個人情報の検査(作業ツリーと git 履歴) 検出 0 件
+
+# 確認: git のメールアドレスが noreply か → 設定: はい、履歴の noreply 以外: 0 件
+
+$ git status --porcelain
+
+(終了コード: 0)
+
+# 確認: .gitignore に node_modules/ がある: はい、node_modules の追跡: なし、未コミットの変更: なし
+
+# 公開前の確認: すべて合格
+
+$ gh api user -q .login
+SoYamauchi
+(終了コード: 0)
+
+$ gh repo view SoYamauchi/password-generator --json name
+GraphQL: Could not resolve to a Repository with the name 'SoYamauchi/password-generator'. (repository)
+(終了コード: 1)
+
+# リポジトリ名 password-generator は使われていない
+
+$ git branch -M main
+
+(終了コード: 0)
+
+$ gh repo create password-generator --public --source=. --remote=origin --push
+https://github.com/SoYamauchi/password-generator
+branch 'main' set up to track 'origin/main'.
+To https://github.com/SoYamauchi/password-generator.git
+ * [new branch]      HEAD -> main
+(終了コード: 0)
+
+$ gh api repos/SoYamauchi/password-generator/pages
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/pages/pages#get-a-apiname-pages-site","status":"404"}gh: Not Found (HTTP 404)
+(終了コード: 1)
+
+$ gh api -X POST repos/SoYamauchi/password-generator/pages -f source[branch]=main -f source[path]=/
+{"url":"https://api.github.com/repos/SoYamauchi/password-generator/pages","status":null,"cname":null,"custom_404":false,"html_url":"https://soyamauchi.github.io/password-generator/","build_type":"legacy","source":{"branch":"main","path":"/"},"public":true,"protected_domain_state":null,"pending_domain_unverified_at":null,"https_enforced":true}
+(終了コード: 0)
+
+$ gh api repos/SoYamauchi/password-generator/pages/builds/latest -q [.status, .commit] | join(" ")
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/pages/pages#get-latest-pages-build","status":"404"}gh: Not Found (HTTP 404)
+(終了コード: 1)
+
+# Pages のビルド状況(1/20回目): {"message":"Not commit=Found","documentation_url":"https://docs.github.com/rest/pages/pages#get-latest-pages-build","status":"404"}gh:
+
+$ gh api repos/SoYamauchi/password-generator/pages/builds/latest -q [.status, .commit] | join(" ")
+built 8b4f4fcbe6140721296b94138eaf8c6a7750b0f1
+(終了コード: 0)
+
+# Pages のビルド状況(2/20回目): built commit=8b4f4fcbe6140721296b94138eaf8c6a7750b0f1
+
+$ gh api repos/SoYamauchi/password-generator/pages -q .html_url
+https://soyamauchi.github.io/password-generator/
+(終了コード: 0)
+
+# 公開URL(html_url): https://soyamauchi.github.io/password-generator/
+
+$ curl -sI https://soyamauchi.github.io/password-generator/
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 3254
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+Last-Modified: Tue, 27 Oct 2026 07:26:27 GMT
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=31556952
+ETag: "6ae05223-cb6"
+expires: Tue, 27 Oct 2026 07:36:36 GMT
+Cache-Control: max-age=600
+x-proxy-cache: MISS
+X-GitHub-Request-Id: 96C6:1D1D32:66E12:6B4D6:6AE0522C
+x-github-edge-region: japaneast
+Accept-Ranges: bytes
+Age: 0
+Date: Tue, 27 Oct 2026 07:26:36 GMT
+Via: 1.1 varnish
+X-Served-By: cache-nrt-rjaa8190042-NRT
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1793085996.092735,VS0,VE176
+Vary: Accept-Encoding
+X-Fastly-Request-ID: 1cde79a928ede4e5735cc0b8ecef4f8f03ed0576
+(終了コード: 0)
+
+# curl -sI の結果: HTTP 200、HTTPS はい
+
+# SHA-256 の比較(1/3回目): 一致 4/4
+
+# 公開ページの検証: 合格

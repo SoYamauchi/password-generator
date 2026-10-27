@@ -1,0 +1,35 @@
+{
+  "url": "https://soyamauchi.github.io/password-generator/",
+  "repositoryUrl": "https://github.com/SoYamauchi/password-generator",
+  "repository": "SoYamauchi/password-generator",
+  "commit": "8b4f4fcbe6140721296b94138eaf8c6a7750b0f1",
+  "checkedAt": "2026-10-27 16:26:35 JST",
+  "httpStatus": 200,
+  "isHttps": true,
+  "hashes": [
+    {
+      "file": "index.html",
+      "local": "6092c44057950ab9c36dfad6661a90584f65a3d30ff84fc57bdf085424f09ce1",
+      "remote": "6092c44057950ab9c36dfad6661a90584f65a3d30ff84fc57bdf085424f09ce1",
+      "isMatch": true
+    },
+    {
+      "file": "passwordGenerator.js",
+      "local": "9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7",
+      "remote": "9d2bde3040c0ab482526869cfa3b20effb78febba49a52fea2bc5a39684a08a7",
+      "isMatch": true
+    },
+    {
+      "file": "app.js",
+      "local": "5116b001caa9b5a98576f4a8424ffe04d083723823660695f66dc428905a8d46",
+      "remote": "5116b001caa9b5a98576f4a8424ffe04d083723823660695f66dc428905a8d46",
+      "isMatch": true
+    },
+    {
+      "file": "style.css",
+      "local": "b496cb22292a9ff9190c6884bee988c70e287a9eb39e5d065e88b82a0439ea75",
+      "remote": "b496cb22292a9ff9190c6884bee988c70e287a9eb39e5d065e88b82a0439ea75",
+      "isMatch": true
+    }
+  ]
+}

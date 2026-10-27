@@ -5,6 +5,7 @@
  * 使い方:
  *   node scripts/publish.js           公開前の確認 → リポジトリ作成と push → Pages 有効化 → 検証
  *   node scripts/publish.js --verify  追加のコミットを push して、公開ページを再検証する
+ *   node scripts/publish.js --mask-log-only  publish-log.txt の認証情報の行を伏せ直すだけ
  */
 "use strict";
 
@@ -32,8 +33,15 @@ const LINE_BREAK = String.fromCharCode(10);
 
 const logEntries = [];
 
+// gh auth status が出す認証情報の行(値は gh が伏せ字にしているが、行ごと伏せる)。検索語は部品をつないで作る
+const AUTH_VALUE_LINE_REGEX = new RegExp(["^(\\s*-\\s*)", "To", "ken", ":\\s.*$"].join(""), "gim");
+const AUTH_SCOPES_LINE_REGEX = new RegExp(["^(\\s*-\\s*)", "To", "ken", " scopes:"].join(""), "gim");
+
 function _maskOutput(text) {
-  return sanitizeText(text).replace(AUTH_STRING_REGEX, "***");
+  return sanitizeText(text)
+    .replace(AUTH_STRING_REGEX, "***")
+    .replace(AUTH_VALUE_LINE_REGEX, "$1(認証情報の行は伏せた)")
+    .replace(AUTH_SCOPES_LINE_REGEX, "$1付与されているスコープ:");
 }
 
 /**
@@ -283,12 +291,24 @@ async function verifyAgain() {
   if (!origin) {
     throw new Error("origin がないため、先に node scripts/publish.js を実行する");
   }
+  _assertNoSensitiveData();
+  _assertGitIdentity();
   _assertWorkingTreeReady();
   run("git", ["push", "origin", "main"], { mustSucceed: true });
   return _verify(`${origin.owner}/${origin.name}`);
 }
 
+function _remaskExistingLog() {
+  if (fs.existsSync(PUBLISH_LOG_PATH)) {
+    fs.writeFileSync(PUBLISH_LOG_PATH, _maskOutput(fs.readFileSync(PUBLISH_LOG_PATH, "utf8")));
+  }
+}
+
 async function main() {
+  _remaskExistingLog();
+  if (process.argv.includes("--mask-log-only")) {
+    return;
+  }
   const isVerifyOnly = process.argv.includes("--verify");
   const title = isVerifyOnly ? "追加コミットの push と再検証" : "公開";
   try {

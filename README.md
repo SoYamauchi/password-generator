@@ -3,7 +3,8 @@
 推測されにくいパスワードを、ブラウザだけで生成してコピーできる個人用のWebアプリです。
 サーバー・DB・アカウント機能はなく、外部への通信もしません。
 
-- 公開URL: (公開後に追記します)
+- 公開URL: https://soyamauchi.github.io/password-generator/
+- リポジトリ: https://github.com/SoYamauchi/password-generator
 - 乱数は `crypto.getRandomValues` だけを使います。使えない環境では、別の乱数に切り替えず、エラーを表示して生成を止めます。
 
 ## 使い方

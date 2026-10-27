@@ -1,5 +1,5 @@
 # セキュリティ確認
-# 実行日時: 2026-10-27 16:24:54 JST
+# 実行日時: 2026-10-27 16:27:08 JST
 # コマンド: node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=evidence\junit-security.xml tests/security/**/*.test.js
 
 [SCAN] passwordGenerator.js / Math.random: 0 件
@@ -55,23 +55,53 @@
 [SCAN] style.css / 外部URL: 0 件
 [SCAN] style.css / @import: 0 件
 [SCAN] style.css / 通信API: 0 件
-[SCAN] 秘密情報の検査: ファイル 47 件、パターン 8 種、検出 0 件
-[SCAN] 個人情報の検査: ファイル 47 件、検出 0 件
+[SCAN] 秘密情報の検査: ファイル 50 件、パターン 8 種、検出 2 件
+[SCAN] 検出: evidence/publish-log.txt:10 汎用語(トークン)
+[SCAN] 検出: evidence/publish-log.txt:11 汎用語(トークン)
+[SCAN] 個人情報の検査: ファイル 50 件、検出 0 件
 [SCAN] ESLint 終了コード: 0
-✔ [N-01] S-01 アプリ本体に Math.random・Date.now・performance.now・シード等がなく、乱数は getRandomValues だけ (11.3928ms)
-✔ [N-09] S-02 アプリ本体に innerHTML・outerHTML・insertAdjacentHTML・eval・new Function・document.write がない (2.695ms)
-✔ [N-04] S-03 index.html に仕様どおりのCSPがあり、インラインスクリプト・イベント属性・外部URLがない (5.4484ms)
-✔ [N-04] S-04 アプリ本体のJS・CSSに外部URLと通信APIがない (1.5566ms)
-✔ [N-04][N-10] S-05 リポジトリ内に秘密情報らしい文字列がない (25.1789ms)
-✔ [N-10] S-06 リポジトリ内に個人情報(ホームのパス・PC名・ユーザー名・メール・IPアドレス)がない (38.0187ms)
-✔ [静的解析] S-07 ESLint の警告・エラーが0件 (1325.0191ms)
+✔ [N-01] S-01 アプリ本体に Math.random・Date.now・performance.now・シード等がなく、乱数は getRandomValues だけ (11.4548ms)
+✔ [N-09] S-02 アプリ本体に innerHTML・outerHTML・insertAdjacentHTML・eval・new Function・document.write がない (2.8644ms)
+✔ [N-04] S-03 index.html に仕様どおりのCSPがあり、インラインスクリプト・イベント属性・外部URLがない (5.728ms)
+✔ [N-04] S-04 アプリ本体のJS・CSSに外部URLと通信APIがない (1.835ms)
+✖ [N-04][N-10] S-05 リポジトリ内に秘密情報らしい文字列がない (32.0236ms)
+✔ [N-10] S-06 リポジトリ内に個人情報(ホームのパス・PC名・ユーザー名・メール・IPアドレス)がない (33.7475ms)
+✔ [静的解析] S-07 ESLint の警告・エラーが0件 (1356.8408ms)
 ℹ tests 7
 ℹ suites 0
-ℹ pass 7
-ℹ fail 0
+ℹ pass 6
+ℹ fail 1
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1571.0209
+ℹ duration_ms 1608.0616
 
-終了コード: 0
+✖ failing tests:
+
+test at tests\security\staticChecks.test.js:116:1
+✖ [N-04][N-10] S-05 リポジトリ内に秘密情報らしい文字列がない (32.0236ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   'evidence/publish-log.txt:10 汎用語(トークン)',
+  +   'evidence/publish-log.txt:11 汎用語(トークン)'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (C:\Claude\password-generator\tests\security\staticChecks.test.js:127:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'evidence/publish-log.txt:10 汎用語(トークン)', 'evidence/publish-log.txt:11 汎用語(トークン)' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+終了コード: 1
