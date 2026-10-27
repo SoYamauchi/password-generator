@@ -181,3 +181,78 @@ X-Fastly-Request-ID: 3398fdd0bbf0b6a7b8feb5f01bc75d26ee7e32f9
 # SHA-256 の比較(1/3回目): 一致 4/4
 
 # 公開ページの検証: 合格
+
+========== 追加コミットの push と再検証(2026-10-27 16:34:06 JST) ==========
+# 確認: 秘密情報の検査(作業ツリー 60 ファイルと git 履歴) 検出 0 件
+
+# 確認: 個人情報の検査(作業ツリーと git 履歴) 検出 0 件
+
+# 確認: git のメールアドレスが noreply か → 設定: はい、履歴の noreply 以外: 0 件
+
+$ git status --porcelain
+
+(終了コード: 0)
+
+# 確認: .gitignore に node_modules/ がある: はい、node_modules の追跡: なし、未コミットの変更: なし
+
+$ git push origin main
+To https://github.com/SoYamauchi/password-generator.git
+   18563c0..8f607ef  main -> main
+(終了コード: 0)
+
+$ gh api repos/SoYamauchi/password-generator/pages/builds/latest -q [.status, .commit] | join(" ")
+building 8f607efbc7b76a1850ede1a07ef674fca5c5442a
+(終了コード: 0)
+
+# Pages のビルド状況(1/20回目): building commit=8f607efbc7b76a1850ede1a07ef674fca5c5442a
+
+$ gh api repos/SoYamauchi/password-generator/pages/builds/latest -q [.status, .commit] | join(" ")
+building 8f607efbc7b76a1850ede1a07ef674fca5c5442a
+(終了コード: 0)
+
+# Pages のビルド状況(2/20回目): building commit=8f607efbc7b76a1850ede1a07ef674fca5c5442a
+
+$ gh api repos/SoYamauchi/password-generator/pages/builds/latest -q [.status, .commit] | join(" ")
+built 8f607efbc7b76a1850ede1a07ef674fca5c5442a
+(終了コード: 0)
+
+# Pages のビルド状況(3/20回目): built commit=8f607efbc7b76a1850ede1a07ef674fca5c5442a
+
+$ gh api repos/SoYamauchi/password-generator/pages -q .html_url
+https://soyamauchi.github.io/password-generator/
+(終了コード: 0)
+
+# 公開URL(html_url): https://soyamauchi.github.io/password-generator/
+
+$ curl -sI https://soyamauchi.github.io/password-generator/
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 3254
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+Last-Modified: Tue, 27 Oct 2026 07:33:36 GMT
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=31556952
+ETag: "6ae053d0-cb6"
+expires: Tue, 27 Oct 2026 07:44:07 GMT
+Cache-Control: max-age=600
+x-proxy-cache: MISS
+X-GitHub-Request-Id: F2BE:1656EE:71AD2:76633:6AE053EE
+x-github-edge-region: japaneast
+Accept-Ranges: bytes
+Age: 0
+Date: Tue, 27 Oct 2026 07:34:07 GMT
+Via: 1.1 varnish
+X-Served-By: cache-nrt-rjaa8190048-NRT
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1793086447.009056,VS0,VE172
+Vary: Accept-Encoding
+X-Fastly-Request-ID: e1df38cf64349a8c835ec42b5fb1c3994000cb53
+(終了コード: 0)
+
+# curl -sI の結果: HTTP 200、HTTPS はい
+
+# SHA-256 の比較(1/3回目): 一致 4/4
+
+# 公開ページの検証: 合格
